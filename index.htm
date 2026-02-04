@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- ============================================
+         META INFORMATIONS
+         ============================================
+         - charset: Encodage UTF-8 pour caractères spéciaux
+         - viewport: Responsive design mobile
+         - description: SEO - Description pour Google
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bénin Boost Digital - Agence de communication digitale et solutions numériques au Bénin. Visibilité, promotion et développement de vos projets.">
+    
+    <!-- Titre de la page (visible dans l'onglet) -->
+    <title>Bénin Boost Digital Service  | Communication Digitale & Solutions Numériques</title>
+    
+    <!-- ============================================
+         LIENS VERS FEUILLES DE STYLE
+         ============================================
+         - Font Awesome: Icônes (réseaux sociaux, services)
+         - Google Fonts: Typographie (Inter par défaut)
+         - styles.css: Vos styles personnalisés
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon (icône dans l'onglet) -->
+    <link rel="icon" type="image/png" href="image/favicon.jpeg">
+</head>
+<body>
+    
+    <!-- ============================================
+         HEADER / NAVIGATION
+         ============================================
+         Classes:
+         - .header: Conteneur principal header
+         - .nav: Barre de navigation
+         - .nav-scrolled: Ajoutée via JS quand on scroll
+    -->
+         
+    <header class="header" id="header">
+        <nav class="nav container">
+            <!-- LOGO -->
+            <!-- Modifiez le texte ici pour changer le nom -->
+            <a href="#" class="nav__logo">
+                <span class="logo__benin">BÉNIN</span>
+                <span class="logo__boost">BOOST</span>
+                <span class="logo__digital">DIGITAL</span>
+                <span class="logo__digital">SERVICE</span>
+            </a>
+            
+            <!-- MENU DE NAVIGATION -->
+            <!-- Ajoutez/retirez des <li> pour modifier les liens -->
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item">
+                    <a href="#accueil" class="nav__link active">Accueil</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#services" class="nav__link">Services</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#projets" class="nav__link">Projets</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#blog" class="nav__link">Blog</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#equipe" class="nav__link">Équipe</a>
+                </li>
+                <li class="nav__item">
+                    <!-- Bouton CTA (Call To Action) -->
+                    <a href="#contact" class="nav__cta">Contact</a>
+                </li>
+            </ul>
+            
+            <!-- BOUTON MENU MOBILE (hamburger) -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ============================================
+         SECTION HERO (Accueil)
+         ============================================
+         - Section principale avec titre accrocheur
+         - Stats en dessous du hero
+    -->
+     
+    <section class="hero section" id="accueil">
+        <div class="hero__container container grid">
+            <!-- CONTENU TEXTE -->
+            <div class="hero__content">
+                <!-- Badge au-dessus du titre -->
+                <span class="hero__badge">
+                    <i class="fas fa-sparkles"></i>
+                    Communication Digitale & Solutions Numériques
+                </span>
+                
+                <!-- Titre principal (H1 unique par page) -->
+                <h1 class="hero__title">
+                    Boostez votre <br>
+                    <span class="text-gradient">visibilité digitale</span> au <br>
+                    Bénin
+                </h1>
+                
+                <!-- Description -->
+                <p class="hero__description">
+                   Avec l’évolution de la Technologies, dans 5 ans 10 ans, le Bénin n’aura pas d’autre choix que d’adopter les outils numériques pour aller plus vite. Et là personne n’aura le choix. Pour évoluer, il va falloir suivre la tendance. 
+                    Mais au lieu d’attendre la dernière minute, il faut commencer par s’adapter petit à petit. Prévenir vaut mieux que guérir. 
+                    C’est pourquoi depuis un bon moment Bénin Boost Digital Service accompagne les entreprises dans le développement de leur visibilité et de leur performance en ligne.
+                    Nous offrons des solutions numériques fiables qui permettent aux entreprises de digitaliser leur service et de se rendre visible sur les réseaux sociaux. 
+                </p>
+                
+                <!-- BOUTONS D'ACTION -->
+                <div class="hero__buttons">
+                    <!-- Bouton primaire (vert/orange) -->
+                    <a href="#contact" class="btn btn--primary">
+                        Démarrer votre projet <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <!-- Bouton secondaire (outline) -->
+                    <a href="#services" class="btn btn--outline">
+                        Découvrir nos services
+                    </a>
+                </div>
+            </div>
+            
+            <!-- IMAGE HERO -->
+            <!-- Remplacez le src par votre image 3D -->
+            <div class="hero__image">
+                <img src="image/favicon.jpeg" alt="Illustration 3D visibilité digitale" class="hero__img">
+                <!-- Effet décoratif derrière l'image -->
+                <div class="hero__blob"></div>
+            </div>
+        </div>
+        
+        <!-- ============================================
+             STATISTIQUES (sous le hero)
+             ============================================
+             Modifiez les chiffres selon vos réelles stats
+        -->
+        <!--
+        <div class="stats container">
+            <div class="stats__grid">
+            
+                <div class="stat__item">
+                    <span class="stat__number" data-target="250">0</span>
+                    <span class="stat__suffix">+</span>
+                    <p class="stat__label">Projets réalisés</p>
+                </div>
+            
+                <div class="stat__item">
+                    <span class="stat__number" data-target="98">0</span>
+                    <span class="stat__suffix">%</span>
+                    <p class="stat__label">Clients satisfaits</p>
+                </div>
+            
+                <div class="stat__item">
+                    <span class="stat__number" data-target="15">0</span>
+                    <span class="stat__suffix">+</span>
+                    <p class="stat__label">Années d'expérience</p>
+                </div>
+            </div>
+        </div>
+        -->
+    </section>
+
+    <!-- ============================================
+         SECTION SERVICES
+         ============================================
+         - 9 cartes de services
+         - Grille responsive 3 colonnes
+    -->
+    <section class="services section" id="services">
+        <div class="container">
+            <!-- EN-TÊTE DE SECTION -->
+            <div class="section__header">
+                <h2 class="section__title">Nos Services</h2>
+                <p class="section__subtitle">
+                   Bénin Boost Digital Service est une structure dédiée à la visibilité, à la promotion et au développement 
+                    de vos projets, entreprises et activités.Nous vous offrons une  solutions complètes de 
+                    communication digitale,d'automatisation de vos services  et de  création web.
+                </p>
+            </div>
+            
+            <!-- GRILLE DES SERVICES -->
+            <div class="services__grid">
+                
+                <!-- SERVICE 1: Création visuelle -->
+                <!-- Modifiez l'icône dans <i class="..."> -->
+                <article class="service__card">
+                    <div class="service__icon service__icon--green">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="service__title">Création de visuels</h3>
+                    <p class="service__description">
+                        Conception professionnelle d'affiches, flyers, logos et tous 
+                        supports de communication visuelle pour votre marque.
+                    </p>
+                </article>
+                
+                <!-- SERVICE 2: Tournage vidéo -->
+                  <article class="service__card">
+                    <div class="service__icon service__icon--orange">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="service__title">Sites web & applications mobile</h3>
+                    <p class="service__description">
+                        Développement de sites internet modernes et applications mobiles 
+                        sur mesure pour votre activité.
+                    </p>
+                </article>
+                
+                
+                <!-- SERVICE 3: Réseaux sociaux -->
+                <article class="service__card">
+                    <div class="service__icon service__icon--green">
+                        <i class="fas fa-share-nodes"></i>
+                    </div>
+                    <h3 class="service__title">Gestion de réseaux sociaux</h3>
+                    <p class="service__description">
+                        Animation et gestion complète de vos pages Facebook, Instagram, 
+                        TikTok et autres plateformes sociales.
+                    </p>
+                </article>
+                
+                <!-- SERVICE 4: Publicité -->
+                <article class="service__card">
+                    <div class="service__icon service__icon--orange">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="service__title">Publicité ciblée & boostage</h3>
+                    <p class="service__description">
+                        Campagnes publicitaires ciblées et boostage de comptes Facebook 
+                        et TikTok pour maximiser votre visibilité.
+                    </p>
+                </article>
+                
+                <!-- SERVICE 5: TikTok -->
+                <article class="service__card">
+                    <div class="service__icon service__icon--green">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <h3 class="service__title">Comptes TikTok monétisables</h3>
+                    <p class="service__description">
+                        Création et configuration de comptes TikTok optimisés pour la 
+                        monétisation et la croissance rapide.
+                    </p>
+                </article>
+                
+                <!-- SERVICE 6: Web & Mobile -->
+               <article class="service__card">
+                    <div class="service__icon service__icon--orange">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="service__title">Tournage & montage vidéo</h3>
+                    <p class="service__description">
+                        Production vidéo complète : tournage professionnel, montage 
+                        créatif et post-production pour vos contenus.
+                    </p>
+                </article>
+                
+                <!-- SERVICE 7: Data -->
+                <article class="service__card">
+                    <div class="service__icon service__icon--green">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="service__title">Ingénierie & analyse de données</h3>
+                    <p class="service__description">
+                        Traitement, analyse et visualisation de données pour des 
+                        décisions stratégiques éclairées.
+                    </p>
+                </article>
+                
+                <!-- SERVICE 8: Produits digitaux -->
+                <article class="service__card">
+                    <div class="service__icon service__icon--orange">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="service__title">Vente de produits digitaux</h3>
+                    <p class="service__description">
+                        Distribution de solutions numériques, templates, formations 
+                        et outils digitaux professionnels.
+                    </p>
+                </article>
+                
+                <!-- SERVICE 9: E-mailing -->
+                <article class="service__card">
+                    <div class="service__icon service__icon--green">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="service__title">Campagnes d'e-mailing</h3>
+                    <p class="service__description">
+                        Création et gestion de campagnes e-mailing ciblées pour fidéliser 
+                        et convertir vos prospects.
+                    </p>
+                </article>
+                
+                <!-- SERVICE 10: Location -->
+                <article class="service__card">
+                    <div class="service__icon service__icon--orange">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="service__title">Location de chambres</h3>
+                    <p class="service__description">
+                        Service de location de chambres confortables et bien équipées 
+                        pour vos séjours et événements.
+                    </p>
+                </article>
+                
+                <!-- SERVICE 11: ANIP -->
+                <article class="service__card">
+                    <div class="service__icon service__icon--green">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="service__title">Papiers ANIP</h3>
+                    <p class="service__description">
+                        Réalisation rapide de documents ANIP : CIP, acte de naissance, 
+                        carte biométrique et autres démarches.
+                    </p>
+                </article>
+                
+                <!-- SERVICE 12: Marketing digital -->
+                <article class="service__card">
+                    <div class="service__icon service__icon--orange">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service__title">Marketing digital</h3>
+                    <p class="service__description">
+                        Stratégies digitales complètes pour développer votre présence 
+                        en ligne et atteindre vos objectifs.
+                    </p>
+                </article>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION RÉALISATIONS (Portfolio)
+         ============================================
+         - Grille de projets avec images
+         - Tags de catégories
+    -->
+    <section class="projects section" id="projets">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Nos Réalisations</h2>
+                <p class="section__subtitle">
+                    Découvrez quelques-uns des projets qui ont transformé nos clients
+                </p>
+            </div>
+            
+            <!-- GRILLE DES PROJETS -->
+            <div class="projects__grid">
+                
+                <!-- PROJET 1 -->
+                 <article class="project__card">
+                    <div class="project__image">
+                        <!-- Remplacez par votre image -->
+                        <img src="image/miss_mister_ADO.jpg" alt="Campagne publicitaire ">
+                        <div class="project__overlay">
+                            <span class="project__category">Communication ( En cours )</span>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Partenaire de Communication Officiel</h3>
+                        <p class="project__description">
+                            Communication digital pour le concourrs Miss & Mister ADO 2026
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Facebook Ads</span>
+                            <span class="tag">TikTok</span>
+                            <span class="tag">WhatsApp</span>
+                            <span class="tag">Quelques images et vidéos</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project__card">
+                    <div class="project__image">
+                        <!-- Remplacez par votre image -->
+                        <img src="image/enstp.jpg" alt="Campagne publicitaire ">
+                        <div class="project__overlay">
+                            <span class="project__category">Communication </span>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Partenaire de Communication Officiel</h3>
+                        <p class="project__description">
+                            Communication digital pour le Gala de l'Ecole Nationale Supérieur des Travaux Publics (ENSTP)
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Facebook Ads</span>
+                            <span class="tag">TikTok</span>
+                            <span class="tag">WhatsApp</span>
+                            <span class="tag">Quelques images et vidéos</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project__card">
+                    <div class="project__image">
+                        <!-- Remplacez par votre image -->
+                        <img src="image/ensgep.jpg" alt="Campagne publicitaire ">
+                        <div class="project__overlay">
+                            <span class="project__category">Communication</span>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Partenaire de Communication Officiel</h3>
+                        <p class="project__description">
+                            Communication digital pour le Gala de l'Ecole Nationale Supérieur de Génie Energétique et Procédés (ENSGEP)
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Facebook Ads</span>
+                            <span class="tag">TikTok</span>
+                            <span class="tag">WhatsApp</span>
+                            <span class="tag">Quelques images et vidéos</span>
+                        </div>
+                    </div>
+                </article>
+                
+                 <article class="project__card">
+                    <div class="project__image">
+                        <!-- Remplacez par votre image -->
+                        <img src="image/site_enstp.jpg" alt="Campagne publicitaire ">
+                        <div class="project__overlay">
+                            <span class="project__category"> site web</span>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Développement Web </h3>
+                        <p class="project__description">
+                           Conception et développement du site Web officiel de la soiré Gala de l'Ecole Nationale Supérieure des Travaux Publics (ENSTP)
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Facebook Ads</span>
+                            <span class="tag">TikTok</span>
+                            <span class="tag">WhatsApp</span>
+                            <span class="tag">Quelques images et vidéos</span>
+                        </div>
+                    </div>
+                </article>
+
+                 <article class="project__card">
+                    <div class="project__image">
+                        <!-- Remplacez par votre image -->
+                        <img src="image/nuit_de_élégance.jpg" alt="Campagne publicitaire ">
+                        <div class="project__overlay">
+                            <span class="project__category">Communication</span>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Partenaire de Communication Officiel</h3>
+                        <p class="project__description">
+                            Communication digital pour la Nuit de l'élégance 
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Facebook Ads</span>
+                            <span class="tag">TikTok</span>
+                            <span class="tag">WhatsApp</span>
+                            <span class="tag">Quelques images et vidéos</span>
+                        </div>
+                    </div>
+                </article>
+
+                 <article class="project__card">
+                    <div class="project__image">
+                        <!-- Remplacez par votre image -->
+                        <img src="image/soiré_hecm.jpg" alt="Campagne publicitaire ">
+                        <div class="project__overlay">
+                            <span class="project__category">Communication</span>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Partenaire de Communication Officiel</h3>
+                        <p class="project__description">
+                            Communication digital pour pour la soiré des étudiants de HECM Bohicon 
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Facebook Ads</span>
+                            <span class="tag">TikTok</span>
+                            <span class="tag">WhatsApp</span>
+                            <span class="tag">Quelques images et vidéos</span>
+                        </div>
+                    </div>
+                </article>
+
+                 <article class="project__card">
+                    <div class="project__image">
+                        <!-- Remplacez par votre image -->
+                        <img src="image/débaedeur_party.jpg" alt="Campagne publicitaire ">
+                        <div class="project__overlay">
+                            <span class="project__category">Communication</span>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Partenaire de Communication Officiel</h3>
+                        <p class="project__description">
+                            Communication digital pour la soirée Débardeur Party organisée par les étudiants de l'ESM Bohicon 
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Facebook Ads</span>
+                            <span class="tag">TikTok</span>
+                            <span class="tag">WhatsApp</span>
+                            <span class="tag">Quelques images et vidéos</span>
+                        </div>
+                    </div>
+                </article>
+
+                 <article class="project__card">
+                    <div class="project__image">
+                        <!-- Remplacez par votre image -->
+                        <img src="image/aerz_abomey.png" alt="Campagne publicitaire ">
+                        <div class="project__overlay">
+                            <span class="project__category">Photo_Vidéo</span>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Prise de Photo et réalisation de Montage vidéo</h3>
+                        <p class="project__description">
+                            Prise de photo et réalisation de montage vidéo lors de la deuxième Assemblée Générale des étudiants Ressortissants du Zou de l'UNSTIM (Centre Universitaire d'Abomey)
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Facebook Ads</span>
+                            <span class="tag">TikTok</span>
+                            <span class="tag">WhatsApp</span>
+                            <span class="tag">Quelques images et vidéos</span>
+                        </div>
+                    </div>
+                </article>
+
+                 
+                <!-- PROJET 2 -->
+                 
+                <!--
+                <article class="project__card">
+                    <div class="project__image">
+                        <img src="assets/project-2.jpg" alt="Identité visuelle Restaurant">
+                        <div class="project__overlay">
+                            <span class="project__category">Design graphique</span>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Identité visuelle - Restaurant</h3>
+                        <p class="project__description">
+                            Création complète d'identité visuelle : logo, menus, flyers et visuels réseaux sociaux.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Logo</span>
+                            <span class="tag">Flyers</span>
+                            <span class="tag">Branding</span>
+                        </div>
+                    </div>
+                </article>
+                -->
+                
+                <!-- PROJET 3 -->
+                <!--
+                <article class="project__card">
+                    <div class="project__image">
+                        <img src="assets/project-3.jpg" alt="Vidéo promotionnelle">
+                        <div class="project__overlay">
+                            <span class="project__category">Production vidéo</span>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Vidéo promotionnelle - Événement</h3>
+                        <p class="project__description">
+                            Tournage et montage vidéo professionnel pour festival culturel à Cotonou.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Tournage</span>
+                            <span class="tag">Montage</span>
+                            <span class="tag">Événement</span>
+                        </div>
+                    </div>
+                </article>
+                -->
+                
+                <!-- PROJET 4 -->
+                <!--
+                <article class="project__card">
+                    <div class="project__image">
+                        <img src="assets/project-4.jpg" alt="Application mobile Livraison">
+                        <div class="project__overlay">
+                            <span class="project__category">Développement mobile</span>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Application mobile - Livraison</h3>
+                        <p class="project__description">
+                            App de livraison à domicile avec géolocalisation et paiement mobile money.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Mobile</span>
+                            <span class="tag">iOS</span>
+                            <span class="tag">Android</span>
+                        </div>
+                    </div>
+                </article>
+                -->
+                
+                <!-- PROJET 5 -->
+                <!--
+                <article class="project__card">
+                    <div class="project__image">
+                        <img src="assets/project-5.jpg" alt="Gestion réseaux sociaux Boutique">
+                        <div class="project__overlay">
+                            <span class="project__category">Social Media</span>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Gestion réseaux sociaux - Boutique mode</h3>
+                        <p class="project__description">
+                            Animation Instagram et TikTok : +5000 abonnés en 2 mois avec contenu engageant.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Instagram</span>
+                            <span class="tag">TikTok</span>
+                            <span class="tag">Growth</span>
+                        </div>
+                    </div>
+                </article>
+                -->
+                
+                <!-- PROJET 6 -->
+                <!--
+                <article class="project__card">
+                    <div class="project__image">
+                        <img src="assets/project-6.jpg" alt="Site E-commerce Artisanat">
+                        <div class="project__overlay">
+                            <span class="project__category">Développement web</span>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Site e-commerce - Artisanat local</h3>
+                        <p class="project__description">
+                            Boutique en ligne pour artisans béninois avec paiement sécurisé et livraison intégrée.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">E-commerce</span>
+                            <span class="tag">Web</span>
+                            <span class="tag">Paiement</span>
+                        </div>
+                    </div>
+                </article>
+                -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION BLOG & ACTUALITÉS
+         ============================================
+         - Articles avec filtres par catégorie
+         - Système de filtrage JS
+    -->
+<!--
+    
+    <section class="blog section" id="blog">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Blog & Actualités</h2>
+                <p class="section__subtitle">
+                    Restez informé des dernières tendances et innovations du monde numérique
+                </p>
+            </div>
+            
+             FILTRES DE CATÉGORIE --
+             Ajoutez des boutons ici pour plus de filtres
+            <div class="blog__filters">
+                <button class="filter__btn active" data-filter="all">Tous</button>
+                <button class="filter__btn" data-filter="reseaux">Réseaux Sociaux</button>
+                <button class="filter__btn" data-filter="marketing">Marketing Digital</button>
+                <button class="filter__btn" data-filter="design">Design</button>
+                <button class="filter__btn" data-filter="dev">Développement</button>
+                <button class="filter__btn" data-filter="pub">Publicité</button>
+                <button class="filter__btn" data-filter="video">Vidéo</button>
+            </div>
+            
+            GRILLE DES ARTICLES 
+            <div class="blog__grid">
+                
+                 ARTICLE EN VEDETTE (plus grand) 
+                <article class="blog__card blog__card--featured" data-category="reseaux">
+                    <div class="blog__image">
+                        <img src="assets/blog-1.jpg" alt="Article visibilité Facebook">
+                        <span class="blog__badge">Article en vedette</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> 15 Janvier 2026</span>
+                            <span class="blog__read"><i class="far fa-clock"></i> 5 min</span>
+                            <span class="blog__category">Réseaux Sociaux</span>
+                        </div>
+                        <h3 class="blog__title">Comment booster votre visibilité sur Facebook au Bénin</h3>
+                        <p class="blog__excerpt">
+                            Stratégies efficaces et conseils pratiques pour augmenter l'engagement de votre page Facebook et atteindre plus de clients.
+                        </p>
+                        <a href="#" class="blog__link">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        <p class="blog__author">Par Fatoumata Diallo</p>
+                    </div>
+                </article>
+                
+                 ARTICLE STANDARD 
+                <article class="blog__card" data-category="marketing">
+                    <div class="blog__image">
+                        <img src="assets/blog-2.jpg" alt="Article TikTok">
+                        <span class="blog__category-tag">Marketing Digital</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> 12 Janvier 2026</span>
+                            <span class="blog__read"><i class="far fa-clock"></i> 7 min</span>
+                        </div>
+                        <h3 class="blog__title">TikTok : La nouvelle mine d'or pour les entreprises béninoises</h3>
+                        <p class="blog__excerpt">
+                            Découvrez comment créer du contenu viral et monétiser votre compte TikTok pour développer...
+                        </p>
+                        <a href="#" class="blog__link">Lire plus <i class="fas fa-arrow-right"></i></a>
+                        <p class="blog__author">Par Aïcha Koné</p>
+                    </div>
+                </article>
+                
+                <article class="blog__card" data-category="design">
+                    <div class="blog__image">
+                        <img src="assets/blog-3.jpg" alt="Article Design graphique">
+                        <span class="blog__category-tag">Design</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> 8 Janvier 2026</span>
+                            <span class="blog__read"><i class="far fa-clock"></i> 6 min</span>
+                        </div>
+                        <h3 class="blog__title">Les clés d'un design graphique qui convertit</h3>
+                        <p class="blog__excerpt">
+                            Apprenez à créer des visuels percutants qui captent l'attention et transforment vos prospects...
+                        </p>
+                        <a href="#" class="blog__link">Lire plus <i class="fas fa-arrow-right"></i></a>
+                        <p class="blog__author">Par Aïcha Koné</p>
+                    </div>
+                </article>
+                
+                <article class="blog__card" data-category="dev">
+                    <div class="blog__image">
+                        <img src="assets/blog-4.jpg" alt="Article Site vs App">
+                        <span class="blog__category-tag">Développement</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> 5 Janvier 2026</span>
+                            <span class="blog__read"><i class="far fa-clock"></i> 8 min</span>
+                        </div>
+                        <h3 class="blog__title">Site web ou application mobile : Que choisir pour votre business ?</h3>
+                        <p class="blog__excerpt">
+                            Guide complet pour déterminer la meilleure solution digitale adaptée à vos besoins et budget.
+                        </p>
+                        <a href="#" class="blog__link">Lire plus <i class="fas fa-arrow-right"></i></a>
+                        <p class="blog__author">Par Kodjo Amegah</p>
+                    </div>
+                </article>
+                
+                <article class="blog__card" data-category="pub">
+                    <div class="blog__image">
+                        <img src="assets/blog-5.jpg" alt="Article Publicité ciblée">
+                        <span class="blog__category-tag">Publicité</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> 2 Janvier 2026</span>
+                            <span class="blog__read"><i class="far fa-clock"></i> 10 min</span>
+                        </div>
+                        <h3 class="blog__title">Publicité ciblée : Comment optimiser votre budget marketing</h3>
+                        <p class="blog__excerpt">
+                            Techniques avancées de ciblage Facebook et TikTok Ads pour maximiser votre retour sur...
+                        </p>
+                        <a href="#" class="blog__link">Lire plus <i class="fas fa-arrow-right"></i></a>
+                        <p class="blog__author">Par Armand Houetchenou</p>
+                    </div>
+                </article>
+                
+                <article class="blog__card" data-category="video">
+                    <div class="blog__image">
+                        <img src="assets/blog-6.jpg" alt="Article Stratégie vidéo">
+                        <span class="blog__category-tag">Vidéo</span>
+                    </div>
+                    <div class="blog__content">
+                        <div class="blog__meta">
+                            <span class="blog__date"><i class="far fa-calendar"></i> 29 Décembre 2025</span>
+                            <span class="blog__read"><i class="far fa-clock"></i> 5 min</span>
+                        </div>
+                        <h3 class="blog__title">5 erreurs à éviter dans votre stratégie de contenu vidéo</h3>
+                        <p class="blog__excerpt">
+                            Les pièges courants en production vidéo et comment créer des vidéos qui engagent votre...
+                        </p>
+                        <a href="#" class="blog__link">Lire plus <i class="fas fa-arrow-right"></i></a>
+                        <p class="blog__author">Par Aïcha Koné</p>
+                    </div>
+                </article>
+                
+            </div>
+            
+             BOUTON VOIR PLUS
+            <div class="blog__footer">
+                <a href="#" class="btn btn--outline">Voir plus d'articles</a>
+            </div>
+        </div>
+    </section>
+-->
+
+
+    <!-- ============================================
+         SECTION ÉQUIPE
+         ============================================
+         - 4 membres avec photos et réseaux sociaux
+    -->
+    <section class="team section" id="equipe">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Notre Équipe</h2>
+                <p class="section__subtitle">
+                    Des experts passionnés dédiés à votre succès digital
+                </p>
+            </div>
+            
+            <!-- GRILLE ÉQUIPE -->
+            <div class="team__grid">
+                
+                <!-- MEMBRE 1 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                         <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                        <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+                
+                <!-- MEMBRE 2 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                         <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                        <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+                
+                <!-- MEMBRE 3 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                        <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                        <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                        <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                        <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/espera.png">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name"> AKAKPO Codjo Ulrich Expéra </h3>
+                        <p class="team__role"> Cofondateur : Développeur web </p>
+                        <!-- Réseaux sociaux -->
+                       <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                        <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                       <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                        <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                        <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                        <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                       <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                        <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                       <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                        <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                        <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                        <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                        <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+            <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                        <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                        <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                        <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                        <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                       <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                        <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                        <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                        <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                       <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                        <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                       <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                       <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                        <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                        <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                       <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!-- Réseaux sociaux -->
+                        <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+
+                <!-- MEMBRE 4 -->
+                <article class="team__card">
+                    <div class="team__image">
+                        <!-- Photo du membre -->
+                        <img src="image/Les membres/Marius_Gbadenon.jpg"GBADENON T. Marius">
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">GBADENON T. Marius </h3>
+                        <p class="team__role"> Cofondateur : Coordonateur Bénin Boost Digital Service </p>
+                        <!--
+                        <div class="team__socials">
+                            <a href="#" class="team__social" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="team__social" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </article>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION CONTACT
+         ============================================
+         - Formulaire de contact
+         - Informations de contact
+    -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Contactez-nous</h2>
+                <p class="section__subtitle">
+                    Prêt à démarrer votre projet ? Parlons-en !
+                </p>
+            </div>
+            
+            <div class="contact__container grid">
+                <!-- INFORMATIONS DE CONTACT -->
+                <div class="contact__info">
+                    <h3 class="contact__info-title">Informations de contact</h3>
+                    
+                    <div class="contact__details">
+                        <!-- WhatsApp -->
+                        <div class="contact__item">
+                            <div class="contact__icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact__text">
+                                <span class="contact__label">WhatsApp</span>
+                                <a href="https://wa.me/2290192743308" target="_blank">+229 01 92 74 33 08</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Téléphone -->
+                        <div class="contact__item">
+                            <div class="contact__icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact__text">
+                                <span class="contact__label">Téléphone</span>
+                                <a href="tel:+2290192743308">+229 01 92 74 33 08</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="contact__item">
+                            <div class="contact__icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact__text">
+                                <span class="contact__label">Email</span>
+                                <a href="mailto:beninboostdigitalservice@gmail.com">beninboostdigitalservice@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Adresse -->
+                        <div class="contact__item">
+                            <div class="contact__icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact__text">
+                                <span class="contact__label">Localisation</span>
+                                <p>Abomey,Bénin </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- HORAIRES -->
+                    <div class="contact__hours">
+                        <h4>Dites-nous comment nous pouvons vous aider </h4>
+                        <p><i class="far fa-clock"></i> Lundi - Vendredi: 9h00 - 18h00</p>
+                        <p><i class="far fa-clock"></i> Samedi - Dimanche: Fermé</p>
+                        <p class="contact__response">Nous répondons généralement sous 24h</p>
+                    </div>
+                </div>
+                
+                <!-- FORMULAIRE DE CONTACT -->
+                <form class="contact__form" id="contact-form">
+                    <div class="form__group">
+                        <label for="name" class="form__label">Nom complet</label>
+                        <input type="text" id="name" name="name" class="form__input" placeholder="Votre nom" required>
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="email" class="form__label">Email</label>
+                        <input type="email" id="email" name="email" class="form__input" placeholder="votre@email.fr" required>
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="subject" class="form__label">Sujet</label>
+                        <input type="text" id="subject" name="subject" class="form__input" placeholder="Comment pouvons-nous vous aider ?" required>
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="message" class="form__label">Message</label>
+                        <textarea id="message" name="message" class="form__textarea" placeholder="Décrivez votre projet..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn--primary btn--full">
+                        Envoyer le message <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================
+         - Logo et description
+         - Liens services
+         - Coordonnées
+         - Copyright
+    -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container grid">
+                <!-- COLONNE 1: Logo -->
+                <div class="footer__brand">
+                    <a href="#" class="footer__logo">
+                        <span class="logo__benin">BÉNIN</span>
+                        <span class="logo__boost">BOOST</span>
+                        <span class="logo__digital">DIGITAL</span>
+                        <span class="logo__digital">SERVICE </span>
+                    </a>
+                    <p class="footer__description">
+                        Structure de communication digitale et de solutions numériques dédiée 
+                        à votre visibilité, promotion et développement au Bénin.
+                    </p>
+                    <!-- Réseaux sociaux footer -->
+                    <div class="footer__socials">
+                        <a href="#" class="footer__social" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer__social" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer__social" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="footer__social" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- COLONNE 2: Services -->
+                <div class="footer__column">
+                    <h4 class="footer__title">Services</h4>
+                    <ul class="footer__links">
+                        <li><a href="#services">Création visuels</a></li>
+                        <li><a href="#services">Tournage vidéo</a></li>
+                        <li><a href="#services">Réseaux sociaux</a></li>
+                        <li><a href="#services">Sites web</a></li>
+                    </ul>
+                </div>
+                
+                <!-- COLONNE 3: Contact -->
+                <div class="footer__column">
+                    <h4 class="footer__title">Contact</h4>
+                    <ul class="footer__contact">
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                            <a href="https://wa.me/2290192743308">+229 01 92 74 33 08</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Abomey,Bénin </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- COPYRIGHT -->
+            <div class="footer__bottom">
+                <p>&copy; 2026 Bénin Boost Digital Service. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         BOUTON RETOUR EN HAUT (scroll top)
+         ============================================
+         Apparaît quand on scroll vers le bas
+    -->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- ============================================
+         SCRIPTS JAVASCRIPT
+         ============================================
+         Chargé en fin de body pour performance
+    -->
+    <script src="js/main.js"></script>
+</body>
+</html>
