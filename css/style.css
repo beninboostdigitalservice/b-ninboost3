@@ -1,9 +1,9 @@
 /* ============================================
    BÉNIN BOOST DIGITAL - FEUILLE DE STYLES CSS
    ============================================
-   Version: 1.0
+   Version: 1.1 Mobile-First
    Auteur: Bénin Boost Digital
-   Description: Styles complets pour le site vitrine
+   Description: Styles complets avec adaptation mobile
    
    TABLE DES MATIÈRES:
    -------------------
@@ -26,78 +26,53 @@
 
 /* ============================================
    1. VARIABLES CSS
-   ============================================
-   MODIFIEZ CES VALEURS pour changer l'apparence 
-   globale du site sans toucher au reste du code.
-   
-   Couleurs principales:
-   - Vert émeraude: #0d9488 (professionnel, confiance)
-   - Orange: #f97316 (énergie, créativité)
    ============================================ */
 
 :root {
     /* ---------- COULEURS PRINCIPALES ---------- */
-    
-    /* Vert émeraude - Couleur principale de la marque */
     --color-primary: #0d9488;
-    /* Vert foncé - Pour hover et états actifs */
     --color-primary-dark: #0f766e;
-    /* Vert clair - Pour backgrounds légers */
     --color-primary-light: #14b8a6;
-    /* Vert très clair - Pour arrière-plans */
     --color-primary-lighter: #e0f2f1;
     
-    /* Orange - Couleur secondaire (accent) */
     --color-secondary: #f97316;
-    /* Orange foncé - Pour hover */
     --color-secondary-dark: #ea580c;
-    /* Orange très clair - Pour arrière-plans */
     --color-secondary-lighter: #fff7ed;
     
     /* ---------- COULEURS NEUTRES ---------- */
-    
     --color-white: #ffffff;
     --color-black: #000000;
     
-    /* Palette de gris (du plus clair au plus foncé) */
-    --color-gray-50: #f9fafb;   /* Background très léger */
-    --color-gray-100: #f3f4f6;  /* Bordures légères */
-    --color-gray-200: #e5e7eb;  /* Séparateurs */
-    --color-gray-300: #d1d5db;  /* Texte désactivé */
-    --color-gray-400: #9ca3af;  /* Icônes légères */
-    --color-gray-500: #6b7280;  /* Texte secondaire */
-    --color-gray-600: #4b5563;  /* Texte body */
-    --color-gray-700: #374151;  /* Texte important */
-    --color-gray-800: #1f2937;  /* Titres */
-    --color-gray-900: #111827;  /* Texte très foncé */
+    --color-gray-50: #f9fafb;
+    --color-gray-100: #f3f4f6;
+    --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5db;
+    --color-gray-400: #9ca3af;
+    --color-gray-500: #6b7280;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1f2937;
+    --color-gray-900: #111827;
     
     /* ---------- DÉGRADÉS ---------- */
-    
-    /* Dégradé principal: Vert → Orange (utilisé pour les boutons, badges) */
     --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-    
-    /* Dégradé léger: Pour backgrounds de sections */
     --gradient-light: linear-gradient(135deg, var(--color-primary-lighter) 0%, var(--color-secondary-lighter) 100%);
-    
-    /* Dégradé pour le hero */
     --gradient-hero: linear-gradient(135deg, #e0f7fa 0%, #fff3e0 50%, #e8f5e9 100%);
     
     /* ---------- TYPOGRAPHIE ---------- */
-    
-    /* Police principale - Inter (moderne, lisible) */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     
-    /* Tailles de police (en rem = 16px de base) */
-    --font-size-xs: 0.75rem;     /* 12px - Très petit */
-    --font-size-sm: 0.875rem;    /* 14px - Petit (captions) */
-    --font-size-base: 1rem;      /* 16px - Body text */
-    --font-size-lg: 1.125rem;    /* 18px - Grand */
-    --font-size-xl: 1.25rem;     /* 20px - Très grand */
-    --font-size-2xl: 1.5rem;     /* 24px - H3 */
-    --font-size-3xl: 1.875rem;   /* 30px - H2 mobile */
-    --font-size-4xl: 2.25rem;    /* 36px - H2 desktop */
-    --font-size-5xl: 3rem;       /* 48px - H1 */
-    --font-size-6xl: 3.75rem;    /* 60px - H1 hero desktop */
+    /* Tailles de police RESPONSIVES */
+    --font-size-xs: clamp(0.7rem, 1.5vw, 0.75rem);
+    --font-size-sm: clamp(0.8rem, 1.8vw, 0.875rem);
+    --font-size-base: clamp(0.9rem, 2vw, 1rem);
+    --font-size-lg: clamp(1rem, 2.2vw, 1.125rem);
+    --font-size-xl: clamp(1.1rem, 2.5vw, 1.25rem);
+    --font-size-2xl: clamp(1.25rem, 3vw, 1.5rem);
+    --font-size-3xl: clamp(1.5rem, 4vw, 1.875rem);
+    --font-size-4xl: clamp(1.75rem, 5vw, 2.25rem);
+    --font-size-5xl: clamp(2rem, 6vw, 3rem);
+    --font-size-6xl: clamp(2.5rem, 7vw, 3.75rem);
     
     /* Graisses */
     --font-light: 300;
@@ -113,50 +88,42 @@
     --leading-relaxed: 1.625;
     --leading-loose: 2;
     
-    /* ---------- ESPACEMENTS ---------- */
-    
-    /* Échelle de spacing (4px = 0.25rem base) */
-    --space-0: 0;           /* 0px */
-    --space-1: 0.25rem;     /* 4px */
-    --space-2: 0.5rem;      /* 8px */
-    --space-3: 0.75rem;     /* 12px */
-    --space-4: 1rem;        /* 16px */
-    --space-5: 1.25rem;     /* 20px */
-    --space-6: 1.5rem;      /* 24px */
-    --space-8: 2rem;        /* 32px */
-    --space-10: 2.5rem;     /* 40px */
-    --space-12: 3rem;       /* 48px */
-    --space-16: 4rem;       /* 64px */
-    --space-20: 5rem;       /* 80px */
-    --space-24: 6rem;       /* 96px */
-    --space-32: 8rem;       /* 128px */
+    /* ---------- ESPACEMENTS RESPONSIFS ---------- */
+    --space-0: 0;
+    --space-1: clamp(0.2rem, 0.5vw, 0.25rem);
+    --space-2: clamp(0.4rem, 1vw, 0.5rem);
+    --space-3: clamp(0.6rem, 1.5vw, 0.75rem);
+    --space-4: clamp(0.8rem, 2vw, 1rem);
+    --space-5: clamp(1rem, 2.5vw, 1.25rem);
+    --space-6: clamp(1.2rem, 3vw, 1.5rem);
+    --space-8: clamp(1.5rem, 4vw, 2rem);
+    --space-10: clamp(2rem, 5vw, 2.5rem);
+    --space-12: clamp(2.5rem, 6vw, 3rem);
+    --space-16: clamp(3rem, 8vw, 4rem);
+    --space-20: clamp(4rem, 10vw, 5rem);
+    --space-24: clamp(5rem, 12vw, 6rem);
+    --space-32: clamp(6rem, 16vw, 8rem);
     
     /* ---------- BORDURES & RAYONS ---------- */
-    
     --radius-none: 0;
-    --radius-sm: 0.25rem;   /* 4px - Coins légèrement arrondis */
-    --radius-md: 0.375rem;  /* 6px */
-    --radius-lg: 0.5rem;    /* 8px - Standard */
-    --radius-xl: 0.75rem;   /* 12px */
-    --radius-2xl: 1rem;     /* 16px - Cartes */
-    --radius-3xl: 1.5rem;   /* 24px - Grandes cartes */
-    --radius-full: 9999px;  /* Pill shape / Cercle */
+    --radius-sm: clamp(0.2rem, 0.5vw, 0.25rem);
+    --radius-md: clamp(0.3rem, 0.8vw, 0.375rem);
+    --radius-lg: clamp(0.4rem, 1vw, 0.5rem);
+    --radius-xl: clamp(0.6rem, 1.5vw, 0.75rem);
+    --radius-2xl: clamp(0.8rem, 2vw, 1rem);
+    --radius-3xl: clamp(1.2rem, 3vw, 1.5rem);
+    --radius-full: 9999px;
     
     /* ---------- OMBRES ---------- */
-    
-    /* Ombres subtiles */
     --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
     --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    
-    /* Ombre interne */
     --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
     
     /* ---------- TRANSITIONS ---------- */
-    
     --duration-fast: 150ms;
     --duration-base: 250ms;
     --duration-slow: 350ms;
@@ -168,7 +135,6 @@
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     
-    /* Transitions prêtes à l'emploi */
     --transition-fast: var(--duration-fast) var(--ease-out);
     --transition-base: var(--duration-base) var(--ease-out);
     --transition-slow: var(--duration-slow) var(--ease-out);
@@ -177,7 +143,6 @@
     --transition-all: all var(--transition-base);
     
     /* ---------- Z-INDEX ---------- */
-    
     --z-dropdown: 100;
     --z-sticky: 200;
     --z-fixed: 300;
@@ -186,25 +151,20 @@
     --z-popover: 600;
     --z-tooltip: 700;
     
-    /* ---------- LAYOUT ---------- */
-    
-    --container-max: 1280px;
-    --container-padding: 1rem;
-    --header-height: 80px;
+    /* ---------- LAYOUT RESPONSIF ---------- */
+    --container-max: min(90vw, 1280px);
+    --container-padding: clamp(0.8rem, 3vw, 2rem);
+    --header-height: clamp(60px, 10vw, 80px);
 }
 
 /* ============================================
    2. RESET & STYLES DE BASE
-   ============================================
-   Normalise les styles entre navigateurs et 
-   établit une base cohérente.
    ============================================ */
 
-/* Reset universel */
 *,
 *::before,
 *::after {
-    box-sizing: border-box; /* Padding et border inclus dans la largeur */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     border: 0;
@@ -212,24 +172,20 @@
     vertical-align: baseline;
 }
 
-/* Éléments HTML5 display block pour anciens navigateurs */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section, main {
     display: block;
 }
 
-/* Supprime les puces des listes */
 ol, ul {
     list-style: none;
 }
 
-/* Tableaux */
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
-/* Éléments de formulaire */
 button, input, optgroup, select, textarea {
     font-family: inherit;
     font-size: 100%;
@@ -245,20 +201,17 @@ button,
     cursor: pointer;
 }
 
-/* Supprime l'outline par défaut mais garde l'accessibilité */
 :focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
 
-/* Sélection de texte */
 ::selection {
     background-color: var(--color-primary);
     color: var(--color-white);
     text-shadow: none;
 }
 
-/* Scrollbar personnalisée (Webkit) */
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -277,12 +230,12 @@ button,
     background: var(--color-gray-500);
 }
 
-/* HTML & BODY */
 html {
-    scroll-behavior: smooth; /* Scroll fluide pour les ancres */
+    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    font-size: 16px;
 }
 
 body {
@@ -292,11 +245,10 @@ body {
     line-height: var(--leading-normal);
     color: var(--color-gray-700);
     background-color: var(--color-white);
-    overflow-x: hidden; /* Empêche le scroll horizontal */
+    overflow-x: hidden;
     min-height: 100vh;
 }
 
-/* Images responsives par défaut */
 img,
 picture,
 video,
@@ -307,7 +259,6 @@ svg {
     height: auto;
 }
 
-/* Liens */
 a {
     color: inherit;
     text-decoration: none;
@@ -318,7 +269,6 @@ a:hover {
     color: var(--color-primary);
 }
 
-/* Titres */
 h1, h2, h3, h4, h5, h6 {
     font-weight: var(--font-bold);
     line-height: var(--leading-tight);
@@ -332,7 +282,6 @@ h4 { font-size: var(--font-size-xl); }
 h5 { font-size: var(--font-size-lg); }
 h6 { font-size: var(--font-size-base); }
 
-/* Paragraphes */
 p {
     margin-bottom: var(--space-4);
 }
@@ -341,7 +290,6 @@ p:last-child {
     margin-bottom: 0;
 }
 
-/* Texte en gras et italique */
 b, strong {
     font-weight: var(--font-bold);
 }
@@ -350,18 +298,15 @@ i, em {
     font-style: italic;
 }
 
-/* Petit texte */
 small {
     font-size: var(--font-size-sm);
 }
 
-/* Code */
 code, kbd, samp, pre {
     font-family: 'Fira Code', 'Consolas', monospace;
     font-size: var(--font-size-sm);
 }
 
-/* Séparateur horizontal */
 hr {
     border: none;
     border-top: 1px solid var(--color-gray-200);
@@ -370,14 +315,8 @@ hr {
 
 /* ============================================
    3. UTILITAIRES RÉUTILISABLES
-   ============================================
-   Classes utilitaires pour un développement 
-   rapide sans répéter le CSS.
    ============================================ */
 
-/* ---------- CONTENEURS ---------- */
-
-/* Conteneur principal centré avec max-width */
 .container {
     width: 100%;
     max-width: var(--container-max);
@@ -387,14 +326,11 @@ hr {
     padding-right: var(--container-padding);
 }
 
-/* Conteneur fluide (pleine largeur) */
 .container-fluid {
     width: 100%;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
 }
-
-/* ---------- SECTIONS ---------- */
 
 .section {
     padding-top: var(--space-20);
@@ -402,25 +338,19 @@ hr {
     position: relative;
 }
 
-/* Variantes de sections */
 .section-sm { padding: var(--space-12) 0; }
 .section-lg { padding: var(--space-24) 0; }
 .section-xl { padding: var(--space-32) 0; }
 
-/* Couleurs de fond pour sections */
 .section-white { background-color: var(--color-white); }
 .section-light { background-color: var(--color-gray-50); }
 .section-gradient { background: var(--gradient-light); }
 
-/* ---------- GRILLES ---------- */
-
-/* Grille de base */
 .grid {
     display: grid;
     gap: var(--space-6);
 }
 
-/* Grilles spécifiques */
 .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
 .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
@@ -428,7 +358,6 @@ hr {
 .grid-cols-5 { grid-template-columns: repeat(5, 1fr); }
 .grid-cols-6 { grid-template-columns: repeat(6, 1fr); }
 
-/* Flexbox */
 .flex {
     display: flex;
 }
@@ -454,21 +383,16 @@ hr {
 .gap-6 { gap: var(--space-6); }
 .gap-8 { gap: var(--space-8); }
 
-/* ---------- TEXTES UTILITAIRES ---------- */
-
-/* Alignement */
 .text-left { text-align: left; }
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 
-/* Couleurs de texte */
 .text-white { color: var(--color-white); }
 .text-primary { color: var(--color-primary); }
 .text-secondary { color: var(--color-secondary); }
 .text-gray { color: var(--color-gray-500); }
 .text-dark { color: var(--color-gray-900); }
 
-/* Graisse */
 .font-light { font-weight: var(--font-light); }
 .font-normal { font-weight: var(--font-normal); }
 .font-medium { font-weight: var(--font-medium); }
@@ -476,14 +400,12 @@ hr {
 .font-bold { font-weight: var(--font-bold); }
 .font-extrabold { font-weight: var(--font-extrabold); }
 
-/* Tailles */
 .text-xs { font-size: var(--font-size-xs); }
 .text-sm { font-size: var(--font-size-sm); }
 .text-base { font-size: var(--font-size-base); }
 .text-lg { font-size: var(--font-size-lg); }
 .text-xl { font-size: var(--font-size-xl); }
 
-/* Dégradé de texte */
 .text-gradient {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -491,9 +413,6 @@ hr {
     background-clip: text;
 }
 
-/* ---------- ESPACEMENTS UTILITAIRES ---------- */
-
-/* Marges */
 .m-0 { margin: 0; }
 .mt-4 { margin-top: var(--space-4); }
 .mt-6 { margin-top: var(--space-6); }
@@ -502,14 +421,10 @@ hr {
 .mb-6 { margin-bottom: var(--space-6); }
 .mb-8 { margin-bottom: var(--space-8); }
 
-/* Padding */
 .p-4 { padding: var(--space-4); }
 .p-6 { padding: var(--space-6); }
 .p-8 { padding: var(--space-8); }
 
-/* ---------- VISIBILITÉ ---------- */
-
-/* Screen reader only (accessibilité) */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -522,19 +437,14 @@ hr {
     border-width: 0;
 }
 
-/* Cacher/afficher */
 .hidden { display: none; }
 .block { display: block; }
 .inline-block { display: inline-block; }
 
 /* ============================================
    4. HEADER & NAVIGATION
-   ============================================
-   Styles pour le header fixe et la navigation.
-   Le header devient opaque au scroll.
    ============================================ */
 
-/* Header fixe en haut de page */
 .header {
     position: fixed;
     top: 0;
@@ -549,14 +459,12 @@ hr {
     transition: all var(--transition-base);
 }
 
-/* État du header au scroll (ajouté via JS) */
 .header.scrolled {
     border-bottom-color: var(--color-gray-200);
     box-shadow: var(--shadow-sm);
-    height: 70px; /* Header plus compact */
+    height: clamp(55px, 9vw, 70px);
 }
 
-/* Container de navigation */
 .nav {
     display: flex;
     align-items: center;
@@ -565,54 +473,42 @@ hr {
     width: 100%;
 }
 
-/* ---------- LOGO ---------- */
-
 .nav__logo {
     display: flex;
     align-items: center;
     gap: var(--space-1);
-    font-size: var(--font-size-xl);
+    font-size: clamp(0.9rem, 2vw, var(--font-size-xl));
     font-weight: var(--font-extrabold);
     letter-spacing: -0.025em;
     transition: transform var(--transition-fast);
+    flex-wrap: wrap;
+    max-width: 70%;
 }
 
 .nav__logo:hover {
     transform: scale(1.02);
 }
 
-/* Parties du logo avec couleurs différentes */
-.logo__benin {
-    color: var(--color-primary);
-}
-
-.logo__boost {
-    color: var(--color-secondary);
-}
-
-.logo__digital {
-    color: var(--color-primary);
-}
-
-/* ---------- MENU DE NAVIGATION ---------- */
+.logo__benin { color: var(--color-primary); }
+.logo__boost { color: var(--color-secondary); }
+.logo__digital { color: var(--color-primary); }
 
 .nav__menu {
     display: flex;
     align-items: center;
-    gap: var(--space-8);
+    gap: clamp(0.8rem, 2vw, var(--space-8));
 }
 
-/* Liens du menu */
 .nav__link {
     position: relative;
     font-weight: var(--font-medium);
-    font-size: var(--font-size-base);
+    font-size: clamp(0.85rem, 1.8vw, var(--font-size-base));
     color: var(--color-gray-600);
     padding: var(--space-2) 0;
     transition: color var(--transition-fast);
+    white-space: nowrap;
 }
 
-/* Ligne animée sous le lien */
 .nav__link::after {
     content: '';
     position: absolute;
@@ -624,7 +520,6 @@ hr {
     transition: width var(--transition-base);
 }
 
-/* États hover et active */
 .nav__link:hover,
 .nav__link.active {
     color: var(--color-primary);
@@ -635,20 +530,19 @@ hr {
     width: 100%;
 }
 
-/* ---------- BOUTON CTA (CONTACT) ---------- */
-
 .nav__cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-3) var(--space-6);
+    padding: clamp(0.4rem, 1vw, var(--space-3)) clamp(0.8rem, 2vw, var(--space-6));
     background: var(--gradient-primary);
     color: var(--color-white) !important;
     font-weight: var(--font-semibold);
-    font-size: var(--font-size-sm);
+    font-size: clamp(0.75rem, 1.6vw, var(--font-size-sm));
     border-radius: var(--radius-full);
     box-shadow: var(--shadow-md);
     transition: all var(--transition-fast);
+    white-space: nowrap;
 }
 
 .nav__cta:hover {
@@ -661,16 +555,16 @@ hr {
     transform: translateY(0);
 }
 
-/* ---------- MENU MOBILE (HAMBURGER) ---------- */
-
 .nav__toggle {
-    display: none; /* Caché sur desktop */
-    font-size: var(--font-size-2xl);
+    display: none;
+    font-size: clamp(1.3rem, 3vw, var(--font-size-2xl));
     color: var(--color-gray-700);
     cursor: pointer;
     padding: var(--space-2);
     border-radius: var(--radius-lg);
     transition: background-color var(--transition-fast);
+    background: none;
+    border: none;
 }
 
 .nav__toggle:hover {
@@ -679,9 +573,6 @@ hr {
 
 /* ============================================
    5. SECTION HERO (ACCUEIL)
-   ============================================
-   Première section avec le titre principal,
-   description et image 3D.
    ============================================ */
 
 .hero {
@@ -693,41 +584,37 @@ hr {
     overflow: hidden;
 }
 
-/* Conteneur en grille (2 colonnes) */
 .hero__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-12);
+    gap: clamp(1.5rem, 4vw, var(--space-12));
     align-items: center;
     min-height: calc(100vh - var(--header-height) - var(--space-24));
 }
 
-/* ---------- CONTENU TEXTE ---------- */
-
 .hero__content {
-    max-width: 600px;
+    max-width: min(100%, 600px);
     animation: fadeInUp 0.8s ease-out;
 }
 
-/* Badge au-dessus du titre */
 .hero__badge {
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    padding: var(--space-2) var(--space-4);
+    padding: clamp(0.3rem, 1vw, var(--space-2)) clamp(0.6rem, 1.5vw, var(--space-4));
     background-color: rgba(13, 148, 136, 0.1);
     color: var(--color-primary);
-    font-size: var(--font-size-sm);
+    font-size: clamp(0.7rem, 1.6vw, var(--font-size-sm));
     font-weight: var(--font-medium);
     border-radius: var(--radius-full);
     margin-bottom: var(--space-6);
+    flex-wrap: wrap;
 }
 
 .hero__badge i {
     color: var(--color-secondary);
 }
 
-/* Titre principal */
 .hero__title {
     font-size: var(--font-size-6xl);
     font-weight: var(--font-extrabold);
@@ -737,7 +624,6 @@ hr {
     letter-spacing: -0.02em;
 }
 
-/* Description */
 .hero__description {
     font-size: var(--font-size-lg);
     color: var(--color-gray-600);
@@ -745,14 +631,11 @@ hr {
     margin-bottom: var(--space-8);
 }
 
-/* Boutons d'action */
 .hero__buttons {
     display: flex;
     gap: var(--space-4);
     flex-wrap: wrap;
 }
-
-/* ---------- IMAGE HERO ---------- */
 
 .hero__image {
     position: relative;
@@ -775,11 +658,10 @@ hr {
     transform: scale(1.02) rotate(2deg);
 }
 
-/* Blob décoratif animé derrière l'image */
 .hero__blob {
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: clamp(250px, 40vw, 500px);
+    height: clamp(250px, 40vw, 500px);
     background: var(--gradient-primary);
     border-radius: 50%;
     filter: blur(100px);
@@ -790,34 +672,33 @@ hr {
 
 /* ============================================
    6. STATISTIQUES
-   ============================================
-   Bandeau avec les chiffres clés sous le hero.
    ============================================ */
 
 .stats {
     position: relative;
     z-index: 10;
     margin-top: calc(-1 * var(--space-12));
-    padding: var(--space-8) var(--space-12);
+    padding: clamp(1rem, 3vw, var(--space-8)) clamp(1rem, 4vw, var(--space-12));
     background-color: var(--color-white);
     border-radius: var(--radius-3xl);
     box-shadow: var(--shadow-2xl);
+    width: calc(100% - var(--container-padding) * 2);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .stats__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-8);
+    gap: clamp(0.8rem, 2vw, var(--space-8));
     text-align: center;
 }
 
-/* Élément individuel */
 .stat__item {
-    padding: var(--space-4);
+    padding: clamp(0.5rem, 1.5vw, var(--space-4));
     position: relative;
 }
 
-/* Séparateurs entre les stats (sauf le dernier) */
 .stat__item:not(:last-child)::after {
     content: '';
     position: absolute;
@@ -825,47 +706,42 @@ hr {
     top: 50%;
     transform: translateY(-50%);
     width: 1px;
-    height: 40px;
+    height: clamp(30px, 5vw, 40px);
     background-color: var(--color-gray-200);
 }
 
-/* Nombre */
 .stat__number {
     display: inline-block;
-    font-size: var(--font-size-5xl);
+    font-size: clamp(1.8rem, 5vw, var(--font-size-5xl));
     font-weight: var(--font-extrabold);
     color: var(--color-gray-900);
     line-height: 1;
 }
 
-/* Symbole après le nombre (+, %) */
 .stat__suffix {
-    font-size: var(--font-size-3xl);
+    font-size: clamp(1.2rem, 3vw, var(--font-size-3xl));
     font-weight: var(--font-bold);
     color: var(--color-primary);
     margin-left: var(--space-1);
 }
 
-/* Label sous le nombre */
 .stat__label {
     display: block;
     margin-top: var(--space-2);
-    font-size: var(--font-size-sm);
+    font-size: clamp(0.7rem, 1.6vw, var(--font-size-sm));
     color: var(--color-gray-500);
     font-weight: var(--font-medium);
 }
 
 /* ============================================
    7. SECTION SERVICES
-   ============================================
-   Grille de 12 cartes de services avec icônes.
    ============================================ */
 
-/* En-tête de section (titre + sous-titre) */
 .section__header {
     text-align: center;
-    max-width: 700px;
+    max-width: min(100%, 700px);
     margin: 0 auto var(--space-16);
+    padding: 0 var(--space-4);
 }
 
 .section__title {
@@ -882,17 +758,14 @@ hr {
     line-height: var(--leading-relaxed);
 }
 
-/* ---------- GRILLE DES SERVICES ---------- */
-
 .services__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: clamp(0.8rem, 2vw, var(--space-6));
 }
 
-/* Carte de service individuelle */
 .service__card {
-    padding: var(--space-8);
+    padding: clamp(1rem, 3vw, var(--space-8));
     background-color: var(--color-white);
     border-radius: var(--radius-2xl);
     border: 1px solid var(--color-gray-100);
@@ -901,14 +774,12 @@ hr {
     overflow: hidden;
 }
 
-/* Effet hover sur la carte */
 .service__card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-xl);
     border-color: transparent;
 }
 
-/* Ligne de couleur en haut de la carte au hover */
 .service__card::before {
     content: '';
     position: absolute;
@@ -925,15 +796,14 @@ hr {
     transform: scaleX(1);
 }
 
-/* Icône du service */
 .service__icon {
-    width: 64px;
-    height: 64px;
+    width: clamp(48px, 8vw, 64px);
+    height: clamp(48px, 8vw, 64px);
     border-radius: var(--radius-xl);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--font-size-2xl);
+    font-size: clamp(1.2rem, 3vw, var(--font-size-2xl));
     margin-bottom: var(--space-5);
     color: var(--color-white);
     transition: transform var(--transition-base);
@@ -943,7 +813,6 @@ hr {
     transform: scale(1.1) rotate(5deg);
 }
 
-/* Variantes de couleur pour les icônes */
 .service__icon--green {
     background-color: var(--color-primary);
     box-shadow: 0 10px 30px -10px rgba(13, 148, 136, 0.5);
@@ -954,35 +823,30 @@ hr {
     box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.5);
 }
 
-/* Titre du service */
 .service__title {
-    font-size: var(--font-size-lg);
+    font-size: clamp(1rem, 2.2vw, var(--font-size-lg));
     font-weight: var(--font-bold);
     color: var(--color-gray-900);
     margin-bottom: var(--space-3);
     line-height: var(--leading-tight);
 }
 
-/* Description du service */
 .service__description {
-    font-size: var(--font-size-sm);
+    font-size: clamp(0.8rem, 1.8vw, var(--font-size-sm));
     color: var(--color-gray-500);
     line-height: var(--leading-relaxed);
 }
 
 /* ============================================
    8. SECTION PROJETS/RÉALISATIONS
-   ============================================
-   Portfolio avec images et tags.
    ============================================ */
 
 .projects__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-8);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    gap: clamp(1rem, 3vw, var(--space-8));
 }
 
-/* Carte de projet */
 .project__card {
     background-color: var(--color-white);
     border-radius: var(--radius-2xl);
@@ -997,7 +861,6 @@ hr {
     box-shadow: var(--shadow-xl);
 }
 
-/* Conteneur de l'image */
 .project__image {
     position: relative;
     aspect-ratio: 16 / 10;
@@ -1015,7 +878,6 @@ hr {
     transform: scale(1.08);
 }
 
-/* Overlay avec la catégorie */
 .project__overlay {
     position: absolute;
     top: 0;
@@ -1023,15 +885,15 @@ hr {
     right: 0;
     bottom: 0;
     background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 50%);
-    padding: var(--space-5);
+    padding: clamp(0.8rem, 2vw, var(--space-5));
 }
 
 .project__category {
     display: inline-block;
-    padding: var(--space-1) var(--space-3);
+    padding: clamp(0.2rem, 0.8vw, var(--space-1)) clamp(0.5rem, 1.2vw, var(--space-3));
     background-color: rgba(13, 148, 136, 0.95);
     color: var(--color-white);
-    font-size: var(--font-size-xs);
+    font-size: clamp(0.65rem, 1.4vw, var(--font-size-xs));
     font-weight: var(--font-semibold);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -1039,13 +901,12 @@ hr {
     backdrop-filter: blur(4px);
 }
 
-/* Contenu texte du projet */
 .project__content {
-    padding: var(--space-6);
+    padding: clamp(1rem, 2.5vw, var(--space-6));
 }
 
 .project__title {
-    font-size: var(--font-size-lg);
+    font-size: clamp(0.95rem, 2.2vw, var(--font-size-lg));
     font-weight: var(--font-bold);
     color: var(--color-gray-900);
     margin-bottom: var(--space-2);
@@ -1053,13 +914,12 @@ hr {
 }
 
 .project__description {
-    font-size: var(--font-size-sm);
+    font-size: clamp(0.8rem, 1.8vw, var(--font-size-sm));
     color: var(--color-gray-500);
     margin-bottom: var(--space-4);
     line-height: var(--leading-relaxed);
 }
 
-/* Tags du projet */
 .project__tags {
     display: flex;
     flex-wrap: wrap;
@@ -1068,29 +928,27 @@ hr {
 
 /* ============================================
    9. SECTION BLOG
-   ============================================
-   Articles de blog avec système de filtres.
    ============================================ */
 
-/* Filtres de catégorie */
 .blog__filters {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: var(--space-3);
+    gap: clamp(0.4rem, 1vw, var(--space-3));
     margin-bottom: var(--space-12);
+    padding: 0 var(--space-4);
 }
 
-/* Bouton de filtre */
 .filter__btn {
-    padding: var(--space-2) var(--space-5);
-    font-size: var(--font-size-sm);
+    padding: clamp(0.3rem, 1vw, var(--space-2)) clamp(0.6rem, 1.5vw, var(--space-5));
+    font-size: clamp(0.75rem, 1.6vw, var(--font-size-sm));
     font-weight: var(--font-medium);
     color: var(--color-gray-600);
     background-color: var(--color-gray-100);
     border-radius: var(--radius-full);
     transition: all var(--transition-fast);
     border: 1px solid transparent;
+    cursor: pointer;
 }
 
 .filter__btn:hover {
@@ -1104,14 +962,12 @@ hr {
     box-shadow: var(--shadow-md);
 }
 
-/* Grille d'articles */
 .blog__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-8);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: clamp(1rem, 3vw, var(--space-8));
 }
 
-/* Carte d'article */
 .blog__card {
     background-color: var(--color-white);
     border-radius: var(--radius-2xl);
@@ -1126,28 +982,26 @@ hr {
     box-shadow: var(--shadow-xl);
 }
 
-/* Article en vedette (plus grand) */
 .blog__card--featured {
-    grid-column: span 2;
+    grid-column: span min(2, var(--grid-columns, 2));
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 0;
 }
 
 .blog__card--featured .blog__image {
     aspect-ratio: auto;
     height: 100%;
-    min-height: 400px;
+    min-height: clamp(200px, 30vw, 400px);
 }
 
 .blog__card--featured .blog__content {
-    padding: var(--space-10);
+    padding: clamp(1rem, 3vw, var(--space-10));
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-/* Image de l'article */
 .blog__image {
     position: relative;
     aspect-ratio: 16 / 10;
@@ -1165,15 +1019,14 @@ hr {
     transform: scale(1.05);
 }
 
-/* Badge "Article en vedette" */
 .blog__badge {
     position: absolute;
     top: var(--space-4);
     left: var(--space-4);
-    padding: var(--space-2) var(--space-4);
+    padding: clamp(0.2rem, 0.8vw, var(--space-2)) clamp(0.5rem, 1.2vw, var(--space-4));
     background: var(--gradient-primary);
     color: var(--color-white);
-    font-size: var(--font-size-xs);
+    font-size: clamp(0.65rem, 1.4vw, var(--font-size-xs));
     font-weight: var(--font-bold);
     border-radius: var(--radius-full);
     text-transform: uppercase;
@@ -1181,33 +1034,31 @@ hr {
     box-shadow: var(--shadow-md);
 }
 
-/* Tag de catégorie sur l'image */
 .blog__category-tag {
     position: absolute;
     top: var(--space-4);
     left: var(--space-4);
-    padding: var(--space-1) var(--space-3);
+    padding: clamp(0.2rem, 0.6vw, var(--space-1)) clamp(0.4rem, 1vw, var(--space-3));
     background-color: rgba(0, 0, 0, 0.7);
     color: var(--color-white);
-    font-size: var(--font-size-xs);
+    font-size: clamp(0.65rem, 1.4vw, var(--font-size-xs));
     font-weight: var(--font-medium);
     border-radius: var(--radius-md);
     backdrop-filter: blur(4px);
 }
 
-/* Contenu de l'article */
 .blog__content {
-    padding: var(--space-6);
+    padding: clamp(1rem, 2.5vw, var(--space-6));
 }
 
-/* Métadonnées (date, temps de lecture) */
 .blog__meta {
     display: flex;
     align-items: center;
-    gap: var(--space-4);
+    gap: clamp(0.5rem, 1.5vw, var(--space-4));
     margin-bottom: var(--space-4);
-    font-size: var(--font-size-xs);
+    font-size: clamp(0.7rem, 1.4vw, var(--font-size-xs));
     color: var(--color-gray-400);
+    flex-wrap: wrap;
 }
 
 .blog__meta i {
@@ -1219,9 +1070,8 @@ hr {
     font-weight: var(--font-semibold);
 }
 
-/* Titre de l'article */
 .blog__title {
-    font-size: var(--font-size-xl);
+    font-size: clamp(1rem, 2.2vw, var(--font-size-xl));
     font-weight: var(--font-bold);
     color: var(--color-gray-900);
     margin-bottom: var(--space-3);
@@ -1234,25 +1084,23 @@ hr {
 }
 
 .blog__card--featured .blog__title {
-    font-size: var(--font-size-3xl);
+    font-size: clamp(1.3rem, 3vw, var(--font-size-3xl));
 }
 
-/* Extrait */
 .blog__excerpt {
-    font-size: var(--font-size-base);
+    font-size: clamp(0.85rem, 1.8vw, var(--font-size-base));
     color: var(--color-gray-500);
     line-height: var(--leading-relaxed);
     margin-bottom: var(--space-6);
 }
 
-/* Lien "Lire plus" */
 .blog__link {
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
     color: var(--color-primary);
     font-weight: var(--font-semibold);
-    font-size: var(--font-size-sm);
+    font-size: clamp(0.8rem, 1.6vw, var(--font-size-sm));
     transition: gap var(--transition-fast);
 }
 
@@ -1261,16 +1109,14 @@ hr {
     color: var(--color-primary-dark);
 }
 
-/* Auteur */
 .blog__author {
     margin-top: auto;
     padding-top: var(--space-6);
-    font-size: var(--font-size-sm);
+    font-size: clamp(0.8rem, 1.6vw, var(--font-size-sm));
     color: var(--color-gray-400);
     font-style: italic;
 }
 
-/* Bouton "Voir plus" */
 .blog__footer {
     text-align: center;
     margin-top: var(--space-12);
@@ -1278,17 +1124,14 @@ hr {
 
 /* ============================================
    10. SECTION ÉQUIPE
-   ============================================
-   Présentation des membres avec photos.
    ============================================ */
 
 .team__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-8);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: clamp(1rem, 3vw, var(--space-8));
 }
 
-/* Carte membre */
 .team__card {
     background-color: var(--color-white);
     border-radius: var(--radius-2xl);
@@ -1302,7 +1145,6 @@ hr {
     box-shadow: var(--shadow-xl);
 }
 
-/* Photo du membre */
 .team__image {
     aspect-ratio: 1;
     overflow: hidden;
@@ -1321,7 +1163,6 @@ hr {
     transform: scale(1.08);
 }
 
-/* Overlay au hover */
 .team__image::after {
     content: '';
     position: absolute;
@@ -1335,26 +1176,24 @@ hr {
     opacity: 0.2;
 }
 
-/* Informations du membre */
 .team__info {
-    padding: var(--space-6);
+    padding: clamp(1rem, 2.5vw, var(--space-6));
     text-align: center;
 }
 
 .team__name {
-    font-size: var(--font-size-lg);
+    font-size: clamp(0.95rem, 2.2vw, var(--font-size-lg));
     font-weight: var(--font-bold);
     color: var(--color-gray-900);
     margin-bottom: var(--space-1);
 }
 
 .team__role {
-    font-size: var(--font-size-sm);
+    font-size: clamp(0.75rem, 1.6vw, var(--font-size-sm));
     color: var(--color-gray-500);
     margin-bottom: var(--space-5);
 }
 
-/* Réseaux sociaux */
 .team__socials {
     display: flex;
     justify-content: center;
@@ -1362,15 +1201,15 @@ hr {
 }
 
 .team__social {
-    width: 40px;
-    height: 40px;
+    width: clamp(35px, 6vw, 40px);
+    height: clamp(35px, 6vw, 40px);
     border-radius: var(--radius-full);
     background-color: var(--color-gray-100);
     color: var(--color-gray-600);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--font-size-base);
+    font-size: clamp(0.9rem, 2vw, var(--font-size-base));
     transition: all var(--transition-fast);
 }
 
@@ -1383,21 +1222,17 @@ hr {
 
 /* ============================================
    11. SECTION CONTACT
-   ============================================
-   Formulaire et informations de contact.
    ============================================ */
 
 .contact__container {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: var(--space-16);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    gap: clamp(1.5rem, 4vw, var(--space-16));
     align-items: start;
 }
 
-/* ---------- INFORMATIONS DE CONTACT ---------- */
-
 .contact__info-title {
-    font-size: var(--font-size-2xl);
+    font-size: clamp(1.3rem, 3vw, var(--font-size-2xl));
     font-weight: var(--font-bold);
     color: var(--color-gray-900);
     margin-bottom: var(--space-8);
@@ -1406,27 +1241,26 @@ hr {
 .contact__details {
     display: flex;
     flex-direction: column;
-    gap: var(--space-6);
+    gap: clamp(0.8rem, 2vw, var(--space-6));
     margin-bottom: var(--space-10);
 }
 
-/* Élément de contact (icône + texte) */
 .contact__item {
     display: flex;
     align-items: flex-start;
-    gap: var(--space-5);
+    gap: clamp(0.8rem, 2vw, var(--space-5));
 }
 
 .contact__icon {
-    width: 56px;
-    height: 56px;
+    width: clamp(45px, 8vw, 56px);
+    height: clamp(45px, 8vw, 56px);
     border-radius: var(--radius-xl);
     background: var(--gradient-primary);
     color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--font-size-xl);
+    font-size: clamp(1rem, 2.5vw, var(--font-size-xl));
     flex-shrink: 0;
     box-shadow: var(--shadow-md);
     transition: transform var(--transition-fast);
@@ -1440,10 +1274,11 @@ hr {
     display: flex;
     flex-direction: column;
     gap: var(--space-1);
+    min-width: 0;
 }
 
 .contact__label {
-    font-size: var(--font-size-sm);
+    font-size: clamp(0.75rem, 1.6vw, var(--font-size-sm));
     color: var(--color-gray-400);
     font-weight: var(--font-medium);
 }
@@ -1452,17 +1287,17 @@ hr {
 .contact__text p {
     font-weight: var(--font-semibold);
     color: var(--color-gray-800);
-    font-size: var(--font-size-lg);
+    font-size: clamp(0.9rem, 2vw, var(--font-size-lg));
     transition: color var(--transition-fast);
+    word-break: break-word;
 }
 
 .contact__text a:hover {
     color: var(--color-primary);
 }
 
-/* Horaires d'ouverture */
 .contact__hours {
-    padding: var(--space-8);
+    padding: clamp(1rem, 3vw, var(--space-8));
     background: var(--gradient-primary);
     border-radius: var(--radius-2xl);
     color: var(--color-white);
@@ -1470,7 +1305,7 @@ hr {
 }
 
 .contact__hours h4 {
-    font-size: var(--font-size-xl);
+    font-size: clamp(1.1rem, 2.5vw, var(--font-size-xl));
     font-weight: var(--font-bold);
     margin-bottom: var(--space-6);
     display: flex;
@@ -1480,7 +1315,7 @@ hr {
 
 .contact__hours p {
     margin-bottom: var(--space-3);
-    font-size: var(--font-size-sm);
+    font-size: clamp(0.8rem, 1.8vw, var(--font-size-sm));
     opacity: 0.95;
     display: flex;
     align-items: center;
@@ -1492,26 +1327,23 @@ hr {
     padding-top: var(--space-6);
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     font-weight: var(--font-semibold);
-    font-size: var(--font-size-base);
+    font-size: clamp(0.9rem, 2vw, var(--font-size-base));
     display: flex;
     align-items: center;
     gap: var(--space-2);
 }
 
-/* ---------- FORMULAIRE ---------- */
-
 .contact__form {
     display: flex;
     flex-direction: column;
-    gap: var(--space-6);
-    padding: var(--space-8);
+    gap: clamp(0.8rem, 2vw, var(--space-6));
+    padding: clamp(1rem, 3vw, var(--space-8));
     background-color: var(--color-white);
     border-radius: var(--radius-2xl);
     box-shadow: var(--shadow-xl);
     border: 1px solid var(--color-gray-100);
 }
 
-/* Groupe label + input */
 .form__group {
     display: flex;
     flex-direction: column;
@@ -1519,7 +1351,7 @@ hr {
 }
 
 .form__label {
-    font-size: var(--font-size-sm);
+    font-size: clamp(0.8rem, 1.8vw, var(--font-size-sm));
     font-weight: var(--font-semibold);
     color: var(--color-gray-700);
 }
@@ -1530,14 +1362,13 @@ hr {
     margin-left: var(--space-1);
 }
 
-/* Champs de saisie */
 .form__input,
 .form__textarea {
-    padding: var(--space-4) var(--space-5);
+    padding: clamp(0.7rem, 2vw, var(--space-4)) clamp(0.8rem, 2.5vw, var(--space-5));
     border: 2px solid var(--color-gray-200);
     border-radius: var(--radius-xl);
     background-color: var(--color-gray-50);
-    font-size: var(--font-size-base);
+    font-size: clamp(0.9rem, 2vw, var(--font-size-base));
     color: var(--color-gray-900);
     transition: all var(--transition-fast);
     width: 100%;
@@ -1562,27 +1393,23 @@ hr {
     box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1);
 }
 
-/* Textarea spécifique */
 .form__textarea {
-    min-height: 150px;
+    min-height: clamp(100px, 20vw, 150px);
     resize: vertical;
     font-family: inherit;
 }
 
 /* ============================================
    12. FOOTER
-   ============================================
-   Pied de page avec liens et copyright.
    ============================================ */
 
 .footer {
-    background-color: #0f172a; /* Slate 900 */
+    background-color: #0f172a;
     color: var(--color-gray-400);
-    padding: var(--space-20) 0 var(--space-8);
+    padding: clamp(2rem, 6vw, var(--space-20)) 0 clamp(1rem, 3vw, var(--space-8));
     position: relative;
 }
 
-/* Ligne décorative en haut */
 .footer::before {
     content: '';
     position: absolute;
@@ -1595,21 +1422,20 @@ hr {
 
 .footer__container {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: var(--space-12);
-    margin-bottom: var(--space-16);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: clamp(1.5rem, 4vw, var(--space-12));
+    margin-bottom: clamp(2rem, 5vw, var(--space-16));
 }
 
-/* Logo et description */
 .footer__brand {
-    max-width: 320px;
+    max-width: min(100%, 320px);
 }
 
 .footer__logo {
     display: flex;
     align-items: center;
     gap: var(--space-1);
-    font-size: var(--font-size-2xl);
+    font-size: clamp(1.1rem, 2.5vw, var(--font-size-2xl));
     font-weight: var(--font-extrabold);
     margin-bottom: var(--space-6);
 }
@@ -1624,28 +1450,27 @@ hr {
 }
 
 .footer__description {
-    font-size: var(--font-size-base);
+    font-size: clamp(0.85rem, 1.8vw, var(--font-size-base));
     line-height: var(--leading-relaxed);
     margin-bottom: var(--space-8);
     color: var(--color-gray-400);
 }
 
-/* Réseaux sociaux footer */
 .footer__socials {
     display: flex;
     gap: var(--space-4);
 }
 
 .footer__social {
-    width: 44px;
-    height: 44px;
+    width: clamp(38px, 7vw, 44px);
+    height: clamp(38px, 7vw, 44px);
     border-radius: var(--radius-full);
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--font-size-lg);
+    font-size: clamp(1rem, 2.2vw, var(--font-size-lg));
     transition: all var(--transition-fast);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -1657,13 +1482,12 @@ hr {
     box-shadow: var(--shadow-lg);
 }
 
-/* Colonnes de liens */
 .footer__column {
     padding-top: var(--space-2);
 }
 
 .footer__title {
-    font-size: var(--font-size-lg);
+    font-size: clamp(1rem, 2.2vw, var(--font-size-lg));
     font-weight: var(--font-bold);
     color: var(--color-white);
     margin-bottom: var(--space-6);
@@ -1687,7 +1511,7 @@ hr {
 }
 
 .footer__links a {
-    font-size: var(--font-size-base);
+    font-size: clamp(0.85rem, 1.8vw, var(--font-size-base));
     color: var(--color-gray-400);
     transition: all var(--transition-fast);
     display: inline-block;
@@ -1698,7 +1522,6 @@ hr {
     transform: translateX(4px);
 }
 
-/* Contact dans le footer */
 .footer__contact li {
     display: flex;
     flex-direction: column;
@@ -1708,25 +1531,24 @@ hr {
 .footer__contact i {
     color: var(--color-primary-light);
     margin-bottom: var(--space-2);
-    font-size: var(--font-size-lg);
+    font-size: clamp(1rem, 2.2vw, var(--font-size-lg));
 }
 
 .footer__contact span {
-    font-size: var(--font-size-sm);
+    font-size: clamp(0.75rem, 1.6vw, var(--font-size-sm));
     margin-bottom: var(--space-1);
 }
 
 .footer__contact a {
     color: var(--color-white);
     font-weight: var(--font-semibold);
-    font-size: var(--font-size-base);
+    font-size: clamp(0.9rem, 2vw, var(--font-size-base));
 }
 
 .footer__contact a:hover {
     color: var(--color-primary-light);
 }
 
-/* Copyright */
 .footer__bottom {
     padding-top: var(--space-8);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -1734,27 +1556,22 @@ hr {
 }
 
 .footer__bottom p {
-    font-size: var(--font-size-sm);
+    font-size: clamp(0.75rem, 1.6vw, var(--font-size-sm));
     color: var(--color-gray-500);
     margin: 0;
 }
 
 /* ============================================
    13. COMPOSANTS RÉUTILISABLES
-   ============================================
-   Boutons, tags, badges et autres éléments UI.
    ============================================ */
 
-/* ---------- BOUTONS ---------- */
-
-/* Styles de base pour tous les boutons */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: var(--space-2);
-    padding: var(--space-4) var(--space-8);
-    font-size: var(--font-size-base);
+    padding: clamp(0.6rem, 1.8vw, var(--space-4)) clamp(1rem, 3vw, var(--space-8));
+    font-size: clamp(0.85rem, 1.8vw, var(--font-size-base));
     font-weight: var(--font-semibold);
     line-height: 1.5;
     border-radius: var(--radius-full);
@@ -1766,7 +1583,6 @@ hr {
     overflow: hidden;
 }
 
-/* Effet de ripple au clic */
 .btn::after {
     content: '';
     position: absolute;
@@ -1785,7 +1601,6 @@ hr {
     height: 300px;
 }
 
-/* Bouton primaire (dégradé) */
 .btn--primary {
     background: var(--gradient-primary);
     color: var(--color-white);
@@ -1802,7 +1617,6 @@ hr {
     transform: translateY(0);
 }
 
-/* Bouton secondaire (outline) */
 .btn--outline {
     background-color: transparent;
     color: var(--color-gray-700);
@@ -1815,32 +1629,27 @@ hr {
     background-color: rgba(13, 148, 136, 0.05);
 }
 
-/* Bouton pleine largeur */
 .btn--full {
     width: 100%;
 }
 
-/* Taille petite */
 .btn--sm {
-    padding: var(--space-2) var(--space-4);
-    font-size: var(--font-size-sm);
+    padding: clamp(0.3rem, 1vw, var(--space-2)) clamp(0.6rem, 1.5vw, var(--space-4));
+    font-size: clamp(0.75rem, 1.6vw, var(--font-size-sm));
 }
 
-/* Taille grande */
 .btn--lg {
-    padding: var(--space-5) var(--space-10);
-    font-size: var(--font-size-lg);
+    padding: clamp(0.8rem, 2.2vw, var(--space-5)) clamp(1.2rem, 3.5vw, var(--space-10));
+    font-size: clamp(1rem, 2.2vw, var(--font-size-lg));
 }
-
-/* ---------- TAGS ---------- */
 
 .tag {
     display: inline-flex;
     align-items: center;
-    padding: var(--space-1) var(--space-3);
+    padding: clamp(0.15rem, 0.5vw, var(--space-1)) clamp(0.4rem, 1vw, var(--space-3));
     background-color: var(--color-gray-100);
     color: var(--color-gray-600);
-    font-size: var(--font-size-xs);
+    font-size: clamp(0.65rem, 1.4vw, var(--font-size-xs));
     font-weight: var(--font-medium);
     border-radius: var(--radius-full);
     transition: all var(--transition-fast);
@@ -1851,7 +1660,6 @@ hr {
     color: var(--color-primary);
 }
 
-/* Variantes de tags */
 .tag--primary {
     background-color: var(--color-primary-lighter);
     color: var(--color-primary);
@@ -1862,14 +1670,12 @@ hr {
     color: var(--color-secondary);
 }
 
-/* ---------- BADGES ---------- */
-
 .badge {
     display: inline-flex;
     align-items: center;
     gap: var(--space-1);
-    padding: var(--space-1) var(--space-3);
-    font-size: var(--font-size-xs);
+    padding: clamp(0.15rem, 0.5vw, var(--space-1)) clamp(0.4rem, 1vw, var(--space-3));
+    font-size: clamp(0.65rem, 1.4vw, var(--font-size-xs));
     font-weight: var(--font-bold);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -1886,21 +1692,19 @@ hr {
     color: var(--color-secondary);
 }
 
-/* ---------- BOUTON RETOUR EN HAUT ---------- */
-
 .scrollup {
     position: fixed;
-    right: var(--space-6);
+    right: clamp(1rem, 3vw, var(--space-6));
     bottom: -60px;
-    width: 50px;
-    height: 50px;
+    width: clamp(40px, 8vw, 50px);
+    height: clamp(40px, 8vw, 50px);
     background: var(--gradient-primary);
     color: var(--color-white);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--font-size-xl);
+    font-size: clamp(1rem, 2.5vw, var(--font-size-xl));
     box-shadow: var(--shadow-2xl);
     transition: all var(--transition-base);
     z-index: var(--z-fixed);
@@ -1909,7 +1713,7 @@ hr {
 }
 
 .scrollup.show {
-    bottom: var(--space-6);
+    bottom: clamp(1rem, 3vw, var(--space-6));
 }
 
 .scrollup:hover {
@@ -1923,11 +1727,8 @@ hr {
 
 /* ============================================
    14. ANIMATIONS & KEYFRAMES
-   ============================================
-   Définitions des animations réutilisables.
    ============================================ */
 
-/* Animation d'entrée par le bas */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1939,7 +1740,6 @@ hr {
     }
 }
 
-/* Animation d'entrée par la gauche */
 @keyframes fadeInLeft {
     from {
         opacity: 0;
@@ -1951,7 +1751,6 @@ hr {
     }
 }
 
-/* Animation d'entrée par la droite */
 @keyframes fadeInRight {
     from {
         opacity: 0;
@@ -1963,7 +1762,6 @@ hr {
     }
 }
 
-/* Animation de zoom */
 @keyframes zoomIn {
     from {
         opacity: 0;
@@ -1975,7 +1773,6 @@ hr {
     }
 }
 
-/* Pulse du blob */
 @keyframes blob-pulse {
     0%, 100% {
         transform: scale(1);
@@ -1987,7 +1784,6 @@ hr {
     }
 }
 
-/* Animation de flottement */
 @keyframes float {
     0%, 100% {
         transform: translateY(0);
@@ -1997,7 +1793,6 @@ hr {
     }
 }
 
-/* Rotation lente */
 @keyframes spin-slow {
     from {
         transform: rotate(0deg);
@@ -2007,7 +1802,6 @@ hr {
     }
 }
 
-/* Classe utilitaire pour déclencher les animations */
 .animate-fadeInUp {
     animation: fadeInUp 0.6s ease-out forwards;
 }
@@ -2024,7 +1818,6 @@ hr {
     animation: zoomIn 0.5s ease-out forwards;
 }
 
-/* Delays pour les animations en cascade */
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
@@ -2032,92 +1825,35 @@ hr {
 .delay-500 { animation-delay: 0.5s; }
 
 /* ============================================
-   15. RESPONSIVE DESIGN
-   ============================================
-   Adaptations pour différentes tailles d'écran.
-   
-   Breakpoints:
-   - Desktop large: > 1280px
-   - Desktop: 1024px - 1280px
-   - Tablet: 768px - 1024px
-   - Mobile: < 768px
-   - Petit mobile: < 480px
+   15. RESPONSIVE DESIGN - MEDIA QUERIES SPÉCIFIQUES
    ============================================ */
 
-/* ---------- TABLET (max-width: 1024px) ---------- */
-@media screen and (max-width: 1024px) {
+/* ---------- TRÈS PETITS ÉCRANS (moins de 360px) ---------- */
+@media screen and (max-width: 360px) {
     :root {
-        --font-size-6xl: 3rem;
-        --font-size-5xl: 2.5rem;
+        --container-padding: 0.6rem;
     }
     
-    /* Hero */
-    .hero__container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: var(--space-10);
+    .nav__logo {
+        font-size: 0.7rem;
     }
     
-    .hero__content {
-        max-width: 100%;
-        order: 2;
+    .hero__title {
+        font-size: 1.6rem;
     }
     
-    .hero__description {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .hero__buttons {
-        justify-content: center;
-    }
-    
-    .hero__image {
-        order: 1;
-    }
-    
-    .hero__img {
-        max-width: 350px;
-        margin: 0 auto;
-    }
-    
-    .hero__blob {
-        width: 300px;
-        height: 300px;
-    }
-    
-    /* Grilles */
-    .services__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .projects__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .blog__card--featured {
-        grid-column: span 2;
-    }
-    
-    .team__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .footer__container {
-        grid-template-columns: repeat(2, 1fr);
+    .hero__badge {
+        font-size: 0.65rem;
     }
 }
 
-/* ---------- MOBILE (max-width: 768px) ---------- */
-@media screen and (max-width: 768px) {
-    :root {
-        --font-size-6xl: 2.5rem;
-        --font-size-5xl: 2rem;
-        --font-size-4xl: 1.75rem;
-        --header-height: 70px;
+/* ---------- MOBILE (jusqu'à 767px) ---------- */
+@media screen and (max-width: 767px) {
+    /* Navigation mobile */
+    .nav__toggle {
+        display: flex;
     }
     
-    /* Navigation mobile */
     .nav__menu {
         position: fixed;
         top: var(--header-height);
@@ -2126,11 +1862,12 @@ hr {
         height: calc(100vh - var(--header-height));
         background-color: var(--color-white);
         flex-direction: column;
-        padding: var(--space-8);
-        gap: var(--space-6);
+        padding: var(--space-6);
+        gap: var(--space-4);
         transition: left var(--transition-base);
         box-shadow: var(--shadow-2xl);
         overflow-y: auto;
+        align-items: flex-start;
     }
     
     .nav__menu.show {
@@ -2138,40 +1875,68 @@ hr {
     }
     
     .nav__link {
-        font-size: var(--font-size-lg);
+        font-size: 1.1rem;
         padding: var(--space-3) 0;
+        width: 100%;
+        border-bottom: 1px solid var(--color-gray-100);
+    }
+    
+    .nav__link::after {
+        display: none;
     }
     
     .nav__cta {
         margin-top: var(--space-4);
         width: 100%;
         text-align: center;
-    }
-    
-    .nav__toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        padding: var(--space-4);
     }
     
     /* Hero mobile */
-    .hero {
-        padding-top: calc(var(--header-height) + var(--space-8));
+    .hero__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        min-height: auto;
     }
     
-    .hero__title {
-        font-size: var(--font-size-5xl);
+    .hero__content {
+        order: 2;
+        max-width: 100%;
     }
     
-    /* Stats */
+    .hero__description {
+        text-align: center;
+    }
+    
+    .hero__buttons {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero__buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .hero__image {
+        order: 1;
+        margin-bottom: var(--space-6);
+    }
+    
+    .hero__img {
+        max-width: 250px;
+    }
+    
+    /* Stats mobile */
     .stats {
-        padding: var(--space-6);
-        margin-top: var(--space-8);
+        margin-top: var(--space-6);
+        width: 95%;
     }
     
     .stats__grid {
         grid-template-columns: 1fr;
-        gap: var(--space-6);
+        gap: var(--space-4);
     }
     
     .stat__item:not(:last-child)::after {
@@ -2180,7 +1945,7 @@ hr {
     
     .stat__item {
         border-bottom: 1px solid var(--color-gray-100);
-        padding-bottom: var(--space-6);
+        padding-bottom: var(--space-4);
     }
     
     .stat__item:last-child {
@@ -2188,52 +1953,60 @@ hr {
         padding-bottom: 0;
     }
     
-    /* Grilles en 1 colonne */
-    .services__grid,
-    .projects__grid,
+    /* Services mobile */
+    .services__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Projets mobile */
+    .projects__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Blog mobile */
     .blog__grid {
         grid-template-columns: 1fr;
     }
     
     .blog__card--featured {
-        grid-template-columns: 1fr;
         grid-column: span 1;
+        grid-template-columns: 1fr;
     }
     
     .blog__card--featured .blog__image {
-        aspect-ratio: 16 / 10;
-        min-height: auto;
+        min-height: 200px;
     }
     
-    .blog__card--featured .blog__content {
-        padding: var(--space-6);
+    .blog__filters {
+        gap: var(--space-2);
     }
     
-    .blog__card--featured .blog__title {
-        font-size: var(--font-size-xl);
+    .filter__btn {
+        padding: var(--space-2) var(--space-3);
+        font-size: 0.8rem;
     }
     
+    /* Équipe mobile */
     .team__grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 500px;
         margin: 0 auto;
     }
     
-    /* Contact */
+    /* Contact mobile */
     .contact__container {
         grid-template-columns: 1fr;
-        gap: var(--space-12);
     }
     
-    .contact__form {
-        padding: var(--space-6);
+    .contact__hours {
+        order: -1;
+        margin-bottom: var(--space-6);
     }
     
-    /* Footer */
+    /* Footer mobile */
     .footer__container {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: var(--space-10);
     }
     
     .footer__brand {
@@ -2252,73 +2025,118 @@ hr {
     .footer__links a:hover {
         transform: none;
     }
-}
-
-/* ---------- PETIT MOBILE (max-width: 480px) ---------- */
-@media screen and (max-width: 480px) {
-    :root {
-        --font-size-5xl: 1.875rem;
-        --font-size-4xl: 1.5rem;
-        --container-padding: 1rem;
-    }
     
-    .section {
-        padding: var(--space-12) 0;
-    }
-    
-    .hero__buttons {
-        flex-direction: column;
-    }
-    
-    .btn {
-        width: 100%;
-    }
-    
-    .section__header {
-        margin-bottom: var(--space-10);
-    }
-    
-    .service__card,
-    .project__card,
-    .blog__card,
-    .team__card {
-        padding: var(--space-6);
-    }
-    
-    .filter__btn {
-        padding: var(--space-2) var(--space-4);
-        font-size: var(--font-size-xs);
-    }
-    
-    .blog__filters {
-        gap: var(--space-2);
+    .footer__contact li {
+        align-items: center;
     }
 }
 
-/* ---------- TRÈS GRANDS ÉCRANS (min-width: 1536px) ---------- */
+/* ---------- TABLETTE (768px - 1023px) ---------- */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .services__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .projects__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .blog__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .blog__card--featured {
+        grid-column: span 2;
+    }
+    
+    .team__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ---------- PETIT DESKTOP (1024px - 1279px) ---------- */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .services__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .projects__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .blog__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .blog__card--featured {
+        grid-column: span 2;
+    }
+    
+    .team__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ---------- GRANDS ÉCRANS (1280px et plus) ---------- */
+@media screen and (min-width: 1280px) {
+    .services__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .projects__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .blog__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .blog__card--featured {
+        grid-column: span 2;
+    }
+    
+    .team__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .footer__container {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+}
+
+/* ---------- TRÈS GRANDS ÉCRANS (1536px et plus) ---------- */
 @media screen and (min-width: 1536px) {
     :root {
         --container-max: 1400px;
     }
     
     .hero__title {
-        font-size: 4.5rem;
+        font-size: 4rem;
     }
 }
 
-/* ---------- ORIENTATION PAYSAGE MOBILE ---------- */
-@media screen and (max-width: 768px) and (orientation: landscape) {
+/* ---------- ORIENTATION PAYSAGE SUR MOBILE ---------- */
+@media screen and (max-width: 767px) and (orientation: landscape) {
     .hero__container {
         min-height: auto;
         padding: var(--space-8) 0;
     }
     
     .hero__image {
-        display: none;
+        max-width: 200px;
+        margin: 0 auto var(--space-4);
+    }
+    
+    .nav__menu {
+        padding: var(--space-4);
     }
 }
 
-/* ---------- REDUCE MOTION (Accessibilité) ---------- */
+/* ---------- ACCESSIBILITÉ ---------- */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -2357,5 +2175,9 @@ hr {
     a {
         text-decoration: underline;
         color: #000;
+    }
+    
+    .hero__container {
+        min-height: auto;
     }
 }
