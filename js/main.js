@@ -7,12 +7,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Récupérer les éléments
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
+    const navLinks = navMenu ? navMenu.querySelectorAll('.nav__link, .nav__cta') : [];
     
     // Vérifier que les éléments existent
     if (!navToggle || !navMenu) {
-        console.error('Menu mobile : éléments non trouvés');
+        console.warn('Menu mobile : éléments non trouvés');
         return;
     }
+    
+    // Ajouter aria-label initial
+    navToggle.setAttribute('aria-label', 'Ouvrir le menu');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navMenu.setAttribute('id', 'nav-menu');
     
     // Fonction pour ouvrir/fermer le menu
     function toggleMenu() {
@@ -20,17 +26,29 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (isOpen) {
             // Fermer le menu
-            navMenu.classList.remove('show');
-            navToggle.setAttribute('aria-label', 'Ouvrir le menu');
-            navToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            document.body.style.overflow = ''; // Réactiver le scroll
+            closeMenu();
         } else {
             // Ouvrir le menu
-            navMenu.classList.add('show');
-            navToggle.setAttribute('aria-label', 'Fermer le menu');
-            navToggle.innerHTML = '<i class="fas fa-times"></i>';
-            document.body.style.overflow = 'hidden'; // Bloquer le scroll
+            openMenu();
         }
+    }
+    
+    // Fonction pour ouvrir le menu
+    function openMenu() {
+        navMenu.classList.add('show');
+        navToggle.setAttribute('aria-label', 'Fermer le menu');
+        navToggle.setAttribute('aria-expanded', 'true');
+        navToggle.innerHTML = '<i class="fas fa-times"></i>';
+        document.body.style.overflow = 'hidden'; // Bloquer le scroll
+    }
+    
+    // Fonction pour fermer le menu
+    function closeMenu() {
+        navMenu.classList.remove('show');
+        navToggle.setAttribute('aria-label', 'Ouvrir le menu');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        document.body.style.overflow = ''; // Réactiver le scroll
     }
     
     // Écouter le clic sur le bouton hamburger
@@ -41,10 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Fermer le menu quand on clique sur un lien
-    const navLinks = navMenu.querySelectorAll('.nav__link, .nav__cta');
     navLinks.forEach(function(link) {
         link.addEventListener('click', function() {
-            toggleMenu(); // Ferme le menu
+            closeMenu();
         });
     });
     
@@ -53,15 +70,29 @@ document.addEventListener('DOMContentLoaded', function() {
         if (navMenu.classList.contains('show') && 
             !navMenu.contains(e.target) && 
             !navToggle.contains(e.target)) {
-            toggleMenu();
+            closeMenu();
         }
     });
     
     // Fermer avec la touche Echap
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && navMenu.classList.contains('show')) {
-            toggleMenu();
+            closeMenu();
         }
     });
+    
+    // Fermer le menu lors du redimensionnement si on passe en desktop
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 767 && navMenu.classList.contains('show')) {
+            closeMenu();
+        }
+    });
+    
+    // Fermer le menu quand on scrolle si on est en mobile
+    window.addEventListener('scroll', function() {
+        if (window.innerWidth <= 767 && navMenu.classList.contains('show')) {
+            closeMenu();
+        }
+    }, { passive: true });
     
 });
