@@ -677,8 +677,8 @@ hr {
 .stats {
     position: relative;
     z-index: 10;
-    margin-top: calc(-1 * var(--space-12));
-    padding: clamp(1rem, 3vw, var(--space-8)) clamp(1rem, 4vw, var(--space-12));
+    margin-top: var(--space-10);
+    padding: clamp(0.5rem, 1.5vw, var(--space-4)) clamp(0.8rem, 2vw, var(--space-6));
     background-color: var(--color-white);
     border-radius: var(--radius-3xl);
     box-shadow: var(--shadow-2xl);
@@ -690,12 +690,12 @@ hr {
 .stats__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: clamp(0.8rem, 2vw, var(--space-8));
+    gap: clamp(0.5rem, 1vw, var(--space-4));
     text-align: center;
 }
 
 .stat__item {
-    padding: clamp(0.5rem, 1.5vw, var(--space-4));
+    padding: clamp(0.3rem, 0.8vw, var(--space-2));
     position: relative;
 }
 
@@ -712,14 +712,14 @@ hr {
 
 .stat__number {
     display: inline-block;
-    font-size: clamp(1.8rem, 5vw, var(--font-size-5xl));
+    font-size: clamp(1.2rem, 3vw, var(--font-size-3xl));
     font-weight: var(--font-extrabold);
     color: var(--color-gray-900);
     line-height: 1;
 }
 
 .stat__suffix {
-    font-size: clamp(1.2rem, 3vw, var(--font-size-3xl));
+    font-size: clamp(0.8rem, 2vw, var(--font-size-2xl));
     font-weight: var(--font-bold);
     color: var(--color-primary);
     margin-left: var(--space-1);
@@ -727,8 +727,8 @@ hr {
 
 .stat__label {
     display: block;
-    margin-top: var(--space-2);
-    font-size: clamp(0.7rem, 1.6vw, var(--font-size-sm));
+    margin-top: var(--space-1);
+    font-size: clamp(0.6rem, 1.2vw, var(--font-size-xs));
     color: var(--color-gray-500);
     font-weight: var(--font-medium);
 }
@@ -2071,6 +2071,10 @@ hr {
 
 /* ---------- PETIT DESKTOP (1024px - 1279px) ---------- */
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .stats {
+        margin-top: calc(-1 * var(--space-8));
+    }
+    
     .services__grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -2094,6 +2098,10 @@ hr {
 
 /* ---------- GRANDS ÉCRANS (1280px et plus) ---------- */
 @media screen and (min-width: 1280px) {
+    .stats {
+        margin-top: calc(-1 * var(--space-6));
+    }
+    
     .services__grid {
         grid-template-columns: repeat(4, 1fr);
     }
