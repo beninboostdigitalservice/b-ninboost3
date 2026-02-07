@@ -2004,9 +2004,15 @@ hr {
         margin: 0 auto;
     }
     
+    .team__card {
+        display: flex;
+        flex-direction: column;
+    }
+    
     .team__image {
-        aspect-ratio: auto;
-        min-height: 250px;
+        aspect-ratio: 1;
+        width: 100%;
+        height: 300px;
     }
     
     /* Contact mobile */
