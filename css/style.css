@@ -1999,9 +1999,14 @@ hr {
     
     /* Équipe mobile */
     .team__grid {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 500px;
+        grid-template-columns: 1fr;
+        max-width: 100%;
         margin: 0 auto;
+    }
+    
+    .team__image {
+        aspect-ratio: auto;
+        min-height: 250px;
     }
     
     /* Contact mobile */
