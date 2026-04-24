@@ -4,206 +4,647 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos Formations | Bénin Boost Digital Service</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Formations digitales au Bénin - Canva, Facebook Ads, Montage Vidéo, Community Management et plus. Rejoignez Bénin Boost Digital Service.">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <style>
-        :root {
-            --primary-vert: #006363; /* Vert Pétrole */
-            --primary-vert-dark: #004d4d;
-            --accent-orange: #D16B00; /* Orange du logo */
-            --accent-orange-hover: #b85e00;
-            --bg-light: #F9FAFB;
-            --white: #ffffff;
-            --text-dark: #111827;
-            --text-gray: #4B5563;
-            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-        }
+    /* =============================================
+       VARIABLES & BASE
+    ============================================= */
+    :root {
+        --primary: #006363;
+        --primary-dark: #004d4d;
+        --primary-light: rgba(0, 99, 99, 0.08);
+        --accent: #D16B00;
+        --accent-hover: #b85e00;
+        --dark: #0a1a1a;
+        --light: #F4F8F8;
+        --white: #ffffff;
+        --text: #2d3748;
+        --text-muted: #6b7280;
+        --border: #e8f0f0;
+        --shadow-sm: 0 2px 8px rgba(0,99,99,0.07);
+        --shadow: 0 10px 40px rgba(0,99,99,0.1);
+        --shadow-lg: 0 24px 60px rgba(0,99,99,0.15);
+        --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        --radius: 20px;
+        --radius-lg: 28px;
+    }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html, body { overflow-x: hidden; }
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+    body {
+        font-family: 'Instrument Sans', sans-serif;
+        background: var(--light);
+        color: var(--text);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+    }
 
-        /* --- HEADER & LOGO --- */
-        nav {
-            background: var(--white);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
 
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
+    /* =============================================
+       NAVIGATION
+    ============================================= */
+    nav {
+        background: rgba(255,255,255,0.97);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-sm);
+    }
 
-        /* --- HERO SECTION --- */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-vert) 0%, var(--primary-vert-dark) 100%);
-            padding: 100px 5%;
-            text-align: center;
-            color: var(--white);
-            clip-path: ellipse(150% 100% at 50% 0%);
-        }
+    .nav-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 24px;
+        height: 68px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
+    .logo img { height: 42px; width: auto; display: block; }
 
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto 35px;
-        }
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
 
-        /* --- BOUTONS --- */
-        .btn-orange {
-            background-color: var(--accent-orange);
-            color: var(--white);
-            padding: 16px 32px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(209, 107, 0, 0.3);
-        }
+    .nav-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: var(--text-muted);
+        font-size: 0.88rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.25s;
+    }
+    .nav-back:hover { color: var(--primary); }
 
-        .btn-orange:hover {
-            background-color: var(--primary-vert-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
+    .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        background: var(--accent);
+        color: white;
+        padding: 10px 22px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        text-decoration: none;
+        transition: var(--transition);
+        font-family: 'Syne', sans-serif;
+    }
+    .nav-cta:hover { background: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
 
-        /* --- SECTION FORMATIONS --- */
-        .container {
-            max-width: 1200px;
-            margin: -50px auto 100px;
-            padding: 0 20px;
-        }
+    /* =============================================
+       HERO
+    ============================================= */
+    .hero {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        padding: 96px 24px 80px;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
 
-        .grid-formations {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-        }
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -120px;
+        right: -120px;
+        width: 480px;
+        height: 480px;
+        background: rgba(255,255,255,0.04);
+        border-radius: 50%;
+        pointer-events: none;
+    }
 
-        /* --- CARTES --- */
-        .card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(0,0,0,0.02);
-        }
+    .hero::after {
+        content: '';
+        position: absolute;
+        bottom: -80px;
+        left: -60px;
+        width: 320px;
+        height: 320px;
+        background: rgba(209,107,0,0.12);
+        border-radius: 50%;
+        pointer-events: none;
+    }
 
-        .card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 20px 40px rgba(0, 99, 99, 0.1);
-        }
+    .hero-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255,255,255,0.12);
+        border: 1px solid rgba(255,255,255,0.2);
+        color: rgba(255,255,255,0.9);
+        padding: 6px 16px;
+        border-radius: 50px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 24px;
+        position: relative;
+        z-index: 1;
+    }
 
-        .card-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(0, 99, 99, 0.05);
-            color: var(--primary-vert);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
+    .hero-label::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        background: var(--accent);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+    }
 
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-            color: var(--primary-vert);
-        }
+    @keyframes pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.5; transform: scale(1.4); }
+    }
 
-        .card p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
+    .hero h1 {
+        font-size: clamp(2rem, 6vw, 3.6rem);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+    }
 
-        .card-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 20px;
-            border-top: 1px dashed #eee;
-            margin-bottom: 20px;
-        }
+    .hero h1 .accent { color: #FFB347; }
 
-        .meta-item {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
+    .hero p {
+        font-size: clamp(1rem, 2.5vw, 1.15rem);
+        opacity: 0.85;
+        max-width: 620px;
+        margin: 0 auto 36px;
+        line-height: 1.75;
+        position: relative;
+        z-index: 1;
+    }
 
-        .meta-item i {
-            color: var(--accent-orange);
-            margin-right: 5px;
-        }
+    .hero-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        background: var(--accent);
+        color: white;
+        padding: 15px 32px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 0.97rem;
+        transition: var(--transition);
+        box-shadow: 0 6px 24px rgba(209,107,0,0.4);
+        position: relative;
+        z-index: 1;
+        font-family: 'Syne', sans-serif;
+    }
 
-        .card-price {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary-vert);
-            margin-bottom: 20px;
-        }
+    .hero-btn:hover {
+        background: white;
+        color: var(--primary);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
 
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .grid-formations { grid-template-columns: 1fr; }
-            .hero { padding: 80px 5% 120px; }
-        }
+    /* Stats bar */
+    .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 48px;
+        margin-top: 52px;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-stat {
+        text-align: center;
+    }
+
+    .hero-stat strong {
+        display: block;
+        font-family: 'Syne', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: white;
+    }
+
+    .hero-stat span {
+        font-size: 0.8rem;
+        opacity: 0.7;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+    }
+
+    .hero-stat-divider {
+        width: 1px;
+        background: rgba(255,255,255,0.2);
+        height: 40px;
+        align-self: center;
+    }
+
+    /* =============================================
+       MAIN CONTAINER
+    ============================================= */
+    .main-container {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 72px 24px 96px;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 56px;
+    }
+
+    .section-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        background: var(--primary-light);
+        color: var(--primary);
+        padding: 6px 14px;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        border: 1px solid rgba(0,99,99,0.15);
+        margin-bottom: 14px;
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        color: var(--dark);
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+    }
+
+    .section-title span { color: var(--primary); }
+
+    .section-desc {
+        color: var(--text-muted);
+        font-size: 1rem;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    /* =============================================
+       FORMATION CARDS GRID
+    ============================================= */
+    .grid-formations {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 24px;
+    }
+
+    .card {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        padding: 32px 28px;
+        border: 1px solid var(--border);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-lg);
+        border-color: transparent;
+    }
+
+    .card:hover::after { transform: scaleX(1); }
+
+    .card-icon {
+        width: 56px;
+        height: 56px;
+        background: var(--primary-light);
+        color: var(--primary);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        transition: 0.35s;
+    }
+
+    .card:hover .card-icon {
+        background: var(--accent);
+        color: white;
+        border-radius: 50%;
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+        color: var(--dark);
+        margin-bottom: 10px;
+        letter-spacing: -0.01em;
+        line-height: 1.3;
+    }
+
+    .card > p {
+        color: var(--text-muted);
+        font-size: 0.92rem;
+        line-height: 1.65;
+        margin-bottom: 24px;
+        flex-grow: 1;
+    }
+
+    .card-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px dashed var(--border);
+        margin-bottom: 20px;
+        gap: 12px;
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--text);
+        background: var(--light);
+        padding: 6px 12px;
+        border-radius: 50px;
+        border: 1px solid var(--border);
+    }
+
+    .meta-item i { color: var(--accent); font-size: 0.78rem; }
+
+    .card-price {
+        font-family: 'Syne', sans-serif;
+        font-size: 1.55rem;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 18px;
+        letter-spacing: -0.02em;
+    }
+
+    .card-price small {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        font-family: 'Instrument Sans', sans-serif;
+        margin-left: 4px;
+    }
+
+    .btn-inscription {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: var(--accent);
+        color: white;
+        padding: 14px 20px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.92rem;
+        transition: var(--transition);
+        font-family: 'Syne', sans-serif;
+        box-shadow: 0 4px 16px rgba(209,107,0,0.22);
+    }
+
+    .btn-inscription:hover {
+        background: var(--primary);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+    }
+
+    .btn-inscription i { font-size: 0.88rem; }
+
+    /* =============================================
+       CTA BOTTOM BANNER
+    ============================================= */
+    .cta-banner {
+        margin-top: 72px;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        border-radius: var(--radius-lg);
+        padding: 56px 48px;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta-banner::before {
+        content: '';
+        position: absolute;
+        top: -80px; right: -80px;
+        width: 280px; height: 280px;
+        background: rgba(255,255,255,0.04);
+        border-radius: 50%;
+    }
+
+    .cta-banner::after {
+        content: '';
+        position: absolute;
+        bottom: -60px; left: -40px;
+        width: 200px; height: 200px;
+        background: rgba(209,107,0,0.15);
+        border-radius: 50%;
+    }
+
+    .cta-banner h2 {
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+        margin-bottom: 14px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .cta-banner p {
+        opacity: 0.8;
+        margin-bottom: 32px;
+        font-size: 1rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .cta-actions {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+    }
+
+    .btn-wa {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        background: var(--accent);
+        color: white;
+        padding: 14px 28px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 0.95rem;
+        transition: var(--transition);
+        font-family: 'Syne', sans-serif;
+        box-shadow: 0 6px 20px rgba(209,107,0,0.35);
+    }
+
+    .btn-wa:hover { background: white; color: var(--primary); transform: translateY(-3px); }
+
+    .btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        background: transparent;
+        color: white;
+        padding: 14px 28px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: var(--transition);
+        border: 1.5px solid rgba(255,255,255,0.4);
+    }
+
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+        background: var(--dark);
+        color: rgba(255,255,255,0.55);
+        padding: 32px 24px;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    footer span { color: rgba(255,255,255,0.8); font-weight: 600; }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 768px) {
+        .hero { padding: 72px 20px 64px; }
+        .hero h1 { font-size: 2rem; }
+        .hero-stats { gap: 28px; }
+        .hero-stat-divider { display: none; }
+
+        .main-container { padding: 56px 16px 72px; }
+
+        .grid-formations { grid-template-columns: 1fr; }
+
+        .card { padding: 24px 20px; }
+
+        .card-meta { flex-wrap: wrap; gap: 8px; }
+
+        .cta-banner { padding: 40px 24px; }
+        .cta-actions { flex-direction: column; align-items: center; }
+        .cta-actions a { width: 100%; max-width: 300px; justify-content: center; }
+
+        .nav-back { display: none; }
+    }
+
+    @media (max-width: 480px) {
+        .hero h1 { font-size: 1.75rem; }
+        .logo img { height: 36px; }
+        input, select, textarea { font-size: 16px !important; }
+    }
     </style>
 </head>
 <body>
 
+    <!-- ===== NAV ===== -->
     <nav>
-        <div class="logo">
-            <img src="benin-boost.jpg" alt="Bénin Boost Logo">
-        </div>
-        <div>
-            <a href="rejoindre.html" style="text-decoration: none; color: var(--primary-vert); font-weight: 700;">Rejoindre le réseau</a>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <img src="benin-boost.jpg" alt="Bénin Boost Logo">
+            </a>
+            <div class="nav-right">
+                <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Accueil</a>
+                <a href="rejoindre.html" class="nav-cta"><i class="fas fa-users"></i> Rejoindre le réseau</a>
+            </div>
         </div>
     </nav>
 
+    <!-- ===== HERO ===== -->
     <header class="hero">
-        <h1 data-aos="fade-up">Boostez vos compétences digitales dès aujourd’hui </h1>
-        <p data-aos="fade-up" data-aos-delay="100">Rejoignez la communauté Bénin Boost et maîtrisez les outils qui feront de vous un expert demain.</p>
-        <a href="#formations" class="btn-orange" data-aos="zoom-in" data-aos-delay="200">Voir les formations</a>
+        <div class="hero-label" data-aos="fade-down">Formations Digitales · Bénin</div>
+        <h1 data-aos="zoom-out" data-aos-delay="100">
+            Boostez vos compétences<br><span class="accent">digitales</span> dès aujourd'hui
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="200">
+            Rejoignez la communauté Bénin Boost et maîtrisez les outils qui feront de vous un expert demain.
+        </p>
+        <a href="#formations" class="hero-btn" data-aos="zoom-in" data-aos-delay="300">
+            <i class="fas fa-graduation-cap"></i> Voir les formations
+        </a>
+
+        <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+            <div class="hero-stat">
+                <strong>+200</strong>
+                <span>Étudiants formés</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+                <strong>6</strong>
+                <span>Formations disponibles</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+                <strong>100%</strong>
+                <span>Pratique & concret</span>
+            </div>
+        </div>
     </header>
 
-    <main class="container" id="formations">
+    <!-- ===== FORMATIONS ===== -->
+    <main class="main-container" id="formations">
+
+        <div class="section-header" data-aos="fade-down">
+            <div class="section-badge"><i class="fas fa-bolt"></i> Nos Programmes</div>
+            <h2 class="section-title">Toutes nos <span>Formations</span></h2>
+            <p class="section-desc">Des programmes courts, intensifs et orientés résultats pour votre réussite digitale.</p>
+        </div>
+
         <div class="grid-formations">
-            
-            <div class="card" data-aos="fade-up">
+
+            <div class="card" data-aos="fade-up" data-aos-delay="0">
                 <div class="card-icon"><i class="fas fa-palette"></i></div>
                 <h3>Design Graphique avec Canva</h3>
                 <p>Apprenez à créer des visuels professionnels pour les réseaux sociaux, des logos et des présentations percutantes.</p>
@@ -211,11 +652,13 @@
                     <div class="meta-item"><i class="far fa-clock"></i> 2 Semaines</div>
                     <div class="meta-item"><i class="fas fa-signal"></i> Débutant</div>
                 </div>
-                <div class="card-price">10 000 FCFA</div>
-                <a href="inscription.html?formation=Canva" class="btn-orange">S'inscrire maintenant</a>
+                <div class="card-price">10 000 FCFA <small>/ formation</small></div>
+                <a href="inscription.html?formation=Canva" class="btn-inscription">
+                    S'inscrire maintenant <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
 
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card" data-aos="fade-up" data-aos-delay="80">
                 <div class="card-icon"><i class="fas fa-ad"></i></div>
                 <h3>Facebook Ads & Marketing</h3>
                 <p>Maîtrisez la publicité Facebook et Instagram pour booster les ventes et la visibilité de n'importe quel business.</p>
@@ -223,11 +666,13 @@
                     <div class="meta-item"><i class="far fa-clock"></i> 3 Semaines</div>
                     <div class="meta-item"><i class="fas fa-signal"></i> Intermédiaire</div>
                 </div>
-                <div class="card-price">25 000 FCFA</div>
-                <a href="inscription.html?formation=Facebook-Ads" class="btn-orange">S'inscrire maintenant</a>
+                <div class="card-price">25 000 FCFA <small>/ formation</small></div>
+                <a href="inscription.html?formation=Facebook-Ads" class="btn-inscription">
+                    S'inscrire maintenant <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
 
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card" data-aos="fade-up" data-aos-delay="160">
                 <div class="card-icon"><i class="fas fa-video"></i></div>
                 <h3>Montage Vidéo Pro</h3>
                 <p>Réalisez des montages cinématographiques sur CapCut ou Premiere Pro pour YouTube, TikTok et le marketing.</p>
@@ -235,11 +680,13 @@
                     <div class="meta-item"><i class="far fa-clock"></i> 2 Semaines</div>
                     <div class="meta-item"><i class="fas fa-signal"></i> Tous niveaux</div>
                 </div>
-                <div class="card-price">15 000 FCFA</div>
-                <a href="inscription.html?formation=Montage-Video" class="btn-orange">S'inscrire maintenant</a>
+                <div class="card-price">15 000 FCFA <small>/ formation</small></div>
+                <a href="inscription.html?formation=Montage-Video" class="btn-inscription">
+                    S'inscrire maintenant <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
 
-            <div class="card" data-aos="fade-up">
+            <div class="card" data-aos="fade-up" data-aos-delay="0">
                 <div class="card-icon"><i class="fas fa-hashtag"></i></div>
                 <h3>Gestion des Réseaux Sociaux</h3>
                 <p>Devenez Community Manager : apprenez à animer des communautés, planifier des posts et analyser les stats.</p>
@@ -247,11 +694,13 @@
                     <div class="meta-item"><i class="far fa-clock"></i> 2 Semaines</div>
                     <div class="meta-item"><i class="fas fa-signal"></i> Débutant</div>
                 </div>
-                <div class="card-price">12 000 FCFA</div>
-                <a href="inscription.html?formation=Community-Management" class="btn-orange">S'inscrire maintenant</a>
+                <div class="card-price">12 000 FCFA <small>/ formation</small></div>
+                <a href="inscription.html?formation=Community-Management" class="btn-inscription">
+                    S'inscrire maintenant <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
 
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card" data-aos="fade-up" data-aos-delay="80">
                 <div class="card-icon"><i class="fas fa-user-tie"></i></div>
                 <h3>Personal Branding</h3>
                 <p>Créez votre propre marque personnelle, attirez des clients et devenez une référence dans votre domaine.</p>
@@ -259,11 +708,13 @@
                     <div class="meta-item"><i class="far fa-clock"></i> 2 Semaines</div>
                     <div class="meta-item"><i class="fas fa-signal"></i> Débutant</div>
                 </div>
-                <div class="card-price">10 000 FCFA</div>
-                <a href="inscription.html?formation=Personal-Branding" class="btn-orange">S'inscrire maintenant</a>
+                <div class="card-price">10 000 FCFA <small>/ formation</small></div>
+                <a href="inscription.html?formation=Personal-Branding" class="btn-inscription">
+                    S'inscrire maintenant <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
 
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card" data-aos="fade-up" data-aos-delay="160">
                 <div class="card-icon"><i class="fas fa-code"></i></div>
                 <h3>Initiation au Web Design</h3>
                 <p>Apprenez les bases de la création de sites web modernes (UI/UX) et lancez votre présence sur internet.</p>
@@ -271,23 +722,38 @@
                     <div class="meta-item"><i class="far fa-clock"></i> 3 Semaines</div>
                     <div class="meta-item"><i class="fas fa-signal"></i> Débutant</div>
                 </div>
-                <div class="card-price">20 000 FCFA</div>
-                <a href="inscription.html?formation=Web-Design" class="btn-orange">S'inscrire maintenant</a>
+                <div class="card-price">20 000 FCFA <small>/ formation</small></div>
+                <a href="inscription.html?formation=Web-Design" class="btn-inscription">
+                    S'inscrire maintenant <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
 
         </div>
+
+        <!-- CTA Banner -->
+        <div class="cta-banner" data-aos="zoom-in">
+            <h2>Pas sûr(e) de quelle formation choisir ?</h2>
+            <p>Notre équipe vous guide gratuitement vers la formation qui correspond à vos objectifs.</p>
+            <div class="cta-actions">
+                <a href="https://wa.me/2290192743308?text=Bonjour%20Bénin%20Boost,%20je%20souhaite%20des%20infos%20sur%20vos%20formations." class="btn-wa">
+                    <i class="fab fa-whatsapp"></i> Nous contacter sur WhatsApp
+                </a>
+                <a href="index.html#contact" class="btn-ghost">
+                    <i class="fas fa-envelope"></i> Envoyer un message
+                </a>
+            </div>
+        </div>
+
     </main>
 
-    <footer style="background: var(--primary-vert-dark); color: white; padding: 40px 5%; text-align: center;">
-        <p class="copyright">© 2026 <span>Bénin Boost Digital Service</span> – Tous droits réservés.</p>
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>© 2026 <span>Bénin Boost Digital Service</span> – Tous droits réservés.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
+        AOS.init({ duration: 750, once: true, easing: 'ease-out-cubic' });
     </script>
 </body>
 </html>
