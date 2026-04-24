@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bénin Boost Digital Service | Communication Digitale & Solutions Numériques</title>
+    <meta name="description" content="Bénin Boost Digital Service - Agence de communication digitale et solutions numériques au Bénin. Visibilité, promotion et développement de vos projets.">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+    /* =============================================
+       VARIABLES & BASE
+    ============================================= */
+    :root {
+        --primary: #006363;
+        --primary-dark: #004d4d;
+        --primary-light: rgba(0, 99, 99, 0.08);
+        --accent: #D16B00;
+        --accent-light: rgba(209, 107, 0, 0.1);
+        --dark: #0a1a1a;
+        --light: #F4F8F8;
+        --white: #ffffff;
+        --text: #2d3748;
+        --text-muted: #6b7280;
+        --border: #e8f0f0;
+        --glass: rgba(255, 255, 255, 0.96);
+        --shadow-sm: 0 2px 8px rgba(0,99,99,0.08);
+        --shadow: 0 10px 40px rgba(0,99,99,0.12);
+        --shadow-lg: 0 25px 60px rgba(0,99,99,0.16);
+        --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        --radius: 20px;
+        --radius-lg: 32px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html, body { overflow-x: hidden; width: 100%; }
+
+    body {
+        font-family: 'Instrument Sans', sans-serif;
+        background: var(--white);
+        color: var(--text);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 100px 0; }
+
+    img { max-width: 100%; display: block; }
+
+    /* =============================================
+       NAVIGATION
+    ============================================= */
+    nav {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2000;
+        padding: 18px 0;
+        transition: var(--transition);
+    }
+
+    nav.scrolled {
+        background: var(--glass);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 1px 0 var(--border), var(--shadow-sm);
+        padding: 12px 0;
+    }
+
+    .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-container img { height: 44px; width: auto; }
+
+    .nav-links {
+        display: flex;
+        gap: 8px;
+        list-style: none;
+        align-items: center;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 600;
+        font-size: 0.93rem;
+        padding: 8px 16px;
+        border-radius: 50px;
+        transition: 0.25s;
+        letter-spacing: 0.01em;
+    }
+
+    .nav-links a:hover { color: var(--primary); background: var(--primary-light); }
+
+    .nav-cta {
+        background: var(--accent) !important;
+        color: white !important;
+        padding: 10px 22px !important;
+        border-radius: 50px !important;
+    }
+    .nav-cta:hover { background: var(--primary) !important; transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+
+    /* Menu Toggle */
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 2100;
+        background: none;
+        border: none;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--primary);
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+
+    .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Overlay Mobile */
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.4);
+        z-index: 1900;
+        backdrop-filter: blur(4px);
+    }
+    .nav-overlay.active { display: block; }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 90px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -200px;
+        right: -200px;
+        width: 700px;
+        height: 700px;
+        background: radial-gradient(circle, rgba(0,99,99,0.08) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .hero::after {
+        content: '';
+        position: absolute;
+        bottom: -100px;
+        left: -100px;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(209,107,0,0.06) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .hero-inner {
+        text-align: center;
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--primary-light);
+        color: var(--primary);
+        padding: 6px 16px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 28px;
+        border: 1px solid rgba(0,99,99,0.15);
+    }
+
+    .hero-label::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        background: var(--accent);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.5; transform: scale(1.3); }
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 7vw, 5rem);
+        font-weight: 800;
+        line-height: 1.05;
+        color: var(--dark);
+        margin-bottom: 24px;
+        letter-spacing: -0.02em;
+    }
+
+    .hero h1 em {
+        font-style: normal;
+        color: var(--primary);
+        position: relative;
+    }
+
+    .hero h1 em::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--accent);
+        border-radius: 2px;
+    }
+
+    .hero h1 .accent-word { color: var(--accent); }
+
+    .hero > .container > .hero-inner > p {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        color: var(--text-muted);
+        max-width: 600px;
+        margin: 0 auto 44px;
+        line-height: 1.75;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* =============================================
+       BUTTONS
+    ============================================= */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: var(--transition);
+        border: 2px solid transparent;
+        cursor: pointer;
+        font-family: 'Instrument Sans', sans-serif;
+        white-space: nowrap;
+    }
+
+    .btn-primary {
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent);
+        box-shadow: 0 4px 20px rgba(209,107,0,0.3);
+    }
+    .btn-primary:hover { background: #b85e00; border-color: #b85e00; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(209,107,0,0.4); }
+
+    .btn-outline {
+        background: transparent;
+        color: var(--primary);
+        border-color: var(--primary);
+    }
+    .btn-outline:hover { background: var(--primary); color: white; transform: translateY(-3px); box-shadow: var(--shadow); }
+
+    .btn-white {
+        background: white;
+        color: var(--primary);
+        border-color: white;
+    }
+    .btn-white:hover { background: var(--light); transform: translateY(-3px); }
+
+    /* =============================================
+       SECTION HEADERS
+    ============================================= */
+    .section-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--primary-light);
+        color: var(--primary);
+        padding: 6px 16px;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        border: 1px solid rgba(0,99,99,0.15);
+        margin-bottom: 16px;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        color: var(--dark);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+    }
+
+    .section-title span { color: var(--primary); }
+
+    .section-desc {
+        color: var(--text-muted);
+        font-size: 1.05rem;
+        max-width: 540px;
+        line-height: 1.7;
+    }
+
+    .section-header-centered {
+        text-align: center;
+        margin-bottom: 64px;
+    }
+
+    .section-header-centered .section-desc { margin: 0 auto; }
+
+    /* =============================================
+       ABOUT SECTION
+    ============================================= */
+    .about-section {
+        background: var(--light);
+        overflow: hidden;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .about-visual { position: relative; }
+
+    .about-img-wrap {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+    }
+
+    .about-img-wrap img {
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+        border-radius: var(--radius-lg);
+        transition: transform 0.6s ease;
+    }
+
+    .about-img-wrap:hover img { transform: scale(1.03); }
+
+    .floating-badge {
+        position: absolute;
+        bottom: 28px;
+        right: -20px;
+        background: white;
+        padding: 16px 24px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        animation: float 3.5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+    }
+
+    .floating-badge i { color: var(--accent); font-size: 1.4rem; }
+    .floating-badge span { font-weight: 800; color: var(--primary); font-size: 0.9rem; font-family: 'Syne', sans-serif; }
+
+    .sub-tag {
+        display: block;
+        color: var(--accent);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.78rem;
+        margin-bottom: 12px;
+    }
+
+    .about-desc { color: #555; margin-bottom: 18px; line-height: 1.75; }
+    .about-desc strong { color: var(--dark); }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 28px 0;
+    }
+
+    .value-card {
+        background: white;
+        padding: 14px 18px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border: 1px solid var(--border);
+        transition: 0.3s;
+    }
+
+    .value-card:hover {
+        border-color: var(--accent);
+        transform: translateX(4px);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .value-card i { color: var(--accent); font-size: 1.1rem; }
+    .value-card h4 { font-size: 0.9rem; color: var(--dark); font-weight: 700; font-family: 'Instrument Sans', sans-serif; }
+
+    .mini-stats {
+        display: flex;
+        gap: 32px;
+        padding-top: 24px;
+        margin-bottom: 36px;
+        border-top: 1px solid var(--border);
+    }
+
+    .stat-box { display: flex; flex-direction: column; }
+    .stat-number { font-size: 1.7rem; font-weight: 800; color: var(--primary); font-family: 'Syne', sans-serif; }
+    .stat-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* =============================================
+       SERVICES SECTION
+    ============================================= */
+    .services-section {
+        background: white;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin-bottom: 64px;
+    }
+
+    .service-card {
+        background: white;
+        padding: 36px 28px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border);
+        transition: var(--transition);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-lg);
+        border-color: transparent;
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+        width: 72px;
+        height: 72px;
+        background: var(--primary-light);
+        color: var(--primary);
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+        border-radius: 20px;
+        transition: 0.4s;
+    }
+
+    .service-card:hover .service-icon {
+        background: var(--accent);
+        color: white;
+        transform: rotateY(360deg);
+        border-radius: 50%;
+    }
+
+    .service-card h3 {
+        color: var(--dark);
+        margin-bottom: 12px;
+        font-size: 1.25rem;
+        letter-spacing: -0.01em;
+    }
+
+    .service-card p {
+        color: var(--text-muted);
+        font-size: 0.93rem;
+        line-height: 1.65;
+        margin-bottom: 24px;
+        flex: 1;
+    }
+
+    .service-btn {
+        padding: 11px 20px;
+        background: transparent;
+        border: 2px solid var(--border);
+        color: var(--text-muted);
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.88rem;
+        transition: 0.3s;
+        display: inline-block;
+        font-family: 'Instrument Sans', sans-serif;
+    }
+
+    .service-btn:hover {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: white;
+    }
+
+    /* Final CTA */
+    .final-cta {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        padding: 60px 50px;
+        border-radius: var(--radius-lg);
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .final-cta::before {
+        content: '';
+        position: absolute;
+        top: -80px;
+        right: -80px;
+        width: 300px;
+        height: 300px;
+        background: rgba(255,255,255,0.04);
+        border-radius: 50%;
+    }
+
+    .final-cta::after {
+        content: '';
+        position: absolute;
+        bottom: -60px;
+        left: -40px;
+        width: 200px;
+        height: 200px;
+        background: rgba(209,107,0,0.15);
+        border-radius: 50%;
+    }
+
+    .final-cta h3 {
+        font-size: clamp(1.4rem, 3vw, 2rem);
+        margin-bottom: 28px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .main-whatsapp-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--accent);
+        color: white;
+        padding: 16px 36px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 1.05rem;
+        transition: 0.4s;
+        box-shadow: 0 8px 24px rgba(209,107,0,0.4);
+        position: relative;
+        z-index: 1;
+        font-family: 'Syne', sans-serif;
+    }
+
+    .main-whatsapp-btn:hover {
+        background: white;
+        color: var(--primary);
+        transform: scale(1.04);
+    }
+
+    .main-whatsapp-btn i { font-size: 1.2rem; }
+
+    /* =============================================
+       TEAM SECTION
+    ============================================= */
+    .team-section { background: var(--light); }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        margin-bottom: 56px;
+    }
+
+    .team-card {
+        background: white;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        transition: var(--transition);
+        text-align: center;
+    }
+
+    .team-card:hover {
+        transform: translateY(-12px);
+        box-shadow: var(--shadow-lg);
+        border-color: transparent;
+    }
+
+    .member-img-container {
+        position: relative;
+        height: 280px;
+        overflow: hidden;
+    }
+
+    .member-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .team-card:hover .member-img { transform: scale(1.08); }
+
+    .social-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,77,77,0.92) 0%, rgba(0,99,99,0.4) 60%, transparent 100%);
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 24px;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .team-card:hover .social-overlay { opacity: 1; }
+
+    .social-links {
+        display: flex;
+        gap: 10px;
+        transform: translateY(16px);
+        transition: transform 0.4s ease;
+    }
+
+    .team-card:hover .social-links { transform: translateY(0); }
+
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        background: white;
+        color: var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 0.95rem;
+    }
+
+    .social-links a:hover {
+        background: var(--accent);
+        color: white;
+        transform: rotate(360deg) scale(1.1);
+    }
+
+    .member-info { padding: 24px 20px; }
+
+    .member-info h3 {
+        color: var(--dark);
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+        letter-spacing: -0.01em;
+    }
+
+    .role {
+        display: block;
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 0.78rem;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    .member-info p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; }
+
+    .team-cta {
+        text-align: center;
+        background: white;
+        padding: 44px;
+        border-radius: var(--radius-lg);
+        border: 2px dashed rgba(0,99,99,0.25);
+    }
+
+    .team-cta p {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 20px;
+        font-family: 'Syne', sans-serif;
+    }
+
+    /* =============================================
+       CONTACT SECTION
+    ============================================= */
+    .contact-section { background: white; }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 48px;
+        align-items: start;
+    }
+
+    .info-card {
+        background: var(--light);
+        padding: 36px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border);
+        margin-bottom: 24px;
+    }
+
+    .info-item {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .info-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .info-item:first-child { padding-top: 0; }
+
+    .icon-box {
+        width: 48px;
+        height: 48px;
+        background: var(--primary-light);
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+    }
+
+    .info-item h4 { color: var(--dark); font-size: 0.95rem; margin-bottom: 4px; font-family: 'Instrument Sans', sans-serif; font-weight: 700; }
+    .info-item p { color: var(--text-muted); font-size: 0.9rem; }
+    .link-action { color: var(--accent); font-weight: 700; text-decoration: none; font-size: 0.88rem; display: inline-block; margin-top: 4px; }
+    .link-action:hover { text-decoration: underline; }
+
+    .social-container { margin-bottom: 24px; }
+    .social-container h4 { color: var(--dark); margin-bottom: 14px; font-size: 0.95rem; font-weight: 700; }
+    .social-icons { display: flex; gap: 10px; }
+
+    .s-icon {
+        width: 42px;
+        height: 42px;
+        background: var(--primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 0.9rem;
+    }
+    .s-icon:hover { background: var(--accent); transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+
+    .map-placeholder iframe {
+        width: 100%;
+        height: 180px;
+        border: 0;
+        border-radius: var(--radius);
+        display: block;
+    }
+
+    /* Form */
+    .contact-form-container {
+        background: white;
+        padding: 40px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+    }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .form-group { margin-bottom: 18px; }
+
+    .form-group label {
+        display: block;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 8px;
+        font-size: 0.88rem;
+        letter-spacing: 0.02em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 13px 16px;
+        border: 1.5px solid var(--border);
+        border-radius: 12px;
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 0.93rem;
+        transition: 0.3s;
+        outline: none;
+        color: var(--text);
+        background: var(--light);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: var(--primary);
+        background: white;
+        box-shadow: 0 0 0 4px var(--primary-light);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .btn-submit {
+        width: 100%;
+        padding: 16px;
+        background: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 14px;
+        font-weight: 800;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.4s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-family: 'Syne', sans-serif;
+        letter-spacing: 0.01em;
+        box-shadow: 0 4px 20px rgba(209,107,0,0.25);
+    }
+
+    .btn-submit:hover { background: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow); }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .main-footer {
+        background: var(--dark);
+        color: white;
+        padding: 80px 0 32px;
+        position: relative;
+    }
+
+    .footer-newsletter {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        padding: 44px 50px;
+        border-radius: var(--radius-lg);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-bottom: 72px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    .newsletter-content h3 { font-size: 1.6rem; margin-bottom: 6px; }
+    .newsletter-content p { opacity: 0.75; font-size: 0.95rem; }
+
+    .newsletter-form {
+        display: flex;
+        gap: 10px;
+        flex-grow: 1;
+        max-width: 420px;
+    }
+
+    .newsletter-form input {
+        padding: 14px 20px;
+        border-radius: 50px;
+        border: none;
+        width: 100%;
+        outline: none;
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 0.93rem;
+    }
+
+    .btn-newsletter {
+        background: var(--accent);
+        color: white;
+        padding: 0 28px;
+        border-radius: 50px;
+        border: none;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.3s;
+        font-family: 'Syne', sans-serif;
+        white-space: nowrap;
+    }
+
+    .btn-newsletter:hover { filter: brightness(1.1); transform: scale(1.04); }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
+        gap: 40px;
+        margin-bottom: 56px;
+    }
+
+    .footer-logo {
+        font-family: 'Syne', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: white;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 16px;
+        letter-spacing: -0.02em;
+    }
+
+    .footer-logo span { color: var(--accent); }
+
+    .footer-text { opacity: 0.65; line-height: 1.8; margin-bottom: 24px; font-size: 0.9rem; }
+
+    .footer-socials { display: flex; gap: 10px; }
+
+    .social-link {
+        width: 38px;
+        height: 38px;
+        background: rgba(255,255,255,0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 0.85rem;
+    }
+
+    .social-link:hover { background: var(--accent); transform: translateY(-4px); }
+
+    .footer-col h4 {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        position: relative;
+        font-family: 'Syne', sans-serif;
+        letter-spacing: -0.01em;
+    }
+
+    .footer-col h4::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 24px;
+        height: 2px;
+        background: var(--accent);
+        border-radius: 2px;
+    }
+
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a {
+        color: rgba(255,255,255,0.6);
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 0.9rem;
+    }
+    .footer-links a:hover { color: var(--accent); padding-left: 6px; }
+
+    .contact-list { list-style: none; margin-bottom: 20px; }
+    .contact-list li {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        opacity: 0.65;
+        font-size: 0.88rem;
+        line-height: 1.5;
+    }
+    .contact-list i { color: var(--accent); margin-top: 3px; flex-shrink: 0; }
+
+    .btn-footer-contact {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: transparent;
+        border: 1.5px solid rgba(209,107,0,0.6);
+        color: var(--accent);
+        padding: 11px 22px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.3s;
+        font-size: 0.88rem;
+    }
+    .btn-footer-contact:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255,255,255,0.08);
+        padding-top: 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .footer-legal a {
+        color: rgba(255,255,255,0.4);
+        text-decoration: none;
+        margin-right: 20px;
+        font-size: 0.82rem;
+        transition: 0.2s;
+    }
+    .footer-legal a:hover { color: var(--accent); }
+
+    .copyright { font-size: 0.82rem; opacity: 0.4; }
+    .copyright span { color: rgba(255,255,255,0.7); font-weight: 600; }
+
+    .scroll-top {
+        position: absolute;
+        right: 32px;
+        top: -22px;
+        width: 44px;
+        height: 44px;
+        background: var(--accent);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        box-shadow: var(--shadow);
+        transition: 0.3s;
+    }
+    .scroll-top:hover { transform: translateY(-5px); filter: brightness(1.1); }
+
+    /* =============================================
+       RESPONSIVE — TABLET (≤992px)
+    ============================================= */
+    @media (max-width: 992px) {
+        section { padding: 80px 0; }
+
+        /* Nav */
+        .menu-toggle { display: flex; }
+
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: min(320px, 85vw);
+            height: 100vh;
+            background: white;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 32px;
+            gap: 4px;
+            transition: right 0.45s cubic-bezier(0.77, 0.2, 0.05, 1);
+            box-shadow: -20px 0 60px rgba(0,0,0,0.12);
+            z-index: 2000;
+        }
+
+        .nav-links.active { right: 0; }
+        .nav-links li { width: 100%; }
+
+        .nav-links a {
+            display: block;
+            padding: 14px 16px;
+            font-size: 1.05rem;
+            border-radius: 12px;
+            border-bottom: none;
+        }
+
+        .nav-cta {
+            margin-top: 12px;
+            text-align: center;
+            border-radius: 12px !important;
+        }
+
+        /* About */
+        .about-grid { grid-template-columns: 1fr; gap: 48px; }
+        .about-visual { order: 2; }
+        .about-text { order: 1; text-align: center; }
+        .values-grid { justify-content: center; }
+        .mini-stats { justify-content: center; flex-wrap: wrap; gap: 24px; }
+        .floating-badge { right: 16px; }
+
+        /* Contact */
+        .contact-grid { grid-template-columns: 1fr; }
+
+        /* Footer */
+        .footer-grid { grid-template-columns: 1fr 1fr; }
+        .footer-newsletter { text-align: center; justify-content: center; }
+        .newsletter-form { max-width: 100%; }
+    }
+
+    /* =============================================
+       RESPONSIVE — MOBILE (≤768px)
+    ============================================= */
+    @media (max-width: 768px) {
+        section { padding: 64px 0; }
+        .container { padding: 0 16px; }
+
+        /* Hero */
+        .hero h1 { font-size: clamp(2rem, 9vw, 2.8rem); }
+        .hero-actions { flex-direction: column; align-items: center; }
+        .hero-actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+
+        /* Grids */
+        .services-grid { grid-template-columns: 1fr; }
+        .team-grid { grid-template-columns: 1fr; }
+        .values-grid { grid-template-columns: 1fr; }
+
+        /* About image */
+        .about-img-wrap img { height: 340px; }
+        .floating-badge { right: 8px; padding: 12px 16px; }
+        .mini-stats { gap: 16px; }
+
+        /* Form */
+        .form-grid { grid-template-columns: 1fr; }
+        input, select, textarea { font-size: 16px !important; }
+        .contact-form-container { padding: 24px 20px; }
+
+        /* Section titles */
+        .section-title { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+        .final-cta { padding: 40px 24px; }
+
+        /* Team */
+        .member-img-container { height: 300px; }
+
+        /* Info card */
+        .info-card { padding: 24px 20px; }
+
+        /* Footer */
+        .footer-newsletter { padding: 32px 24px; }
+        .newsletter-form { flex-direction: column; }
+        .btn-newsletter { padding: 14px; border-radius: 14px; }
+    }
+
+    /* =============================================
+       RESPONSIVE — SMALL MOBILE (≤480px)
+    ============================================= */
+    @media (max-width: 480px) {
+        .hero h1 { font-size: 2rem; }
+        .logo-container img { height: 36px; }
+        .btn { padding: 13px 22px; font-size: 0.9rem; }
+        .footer-grid { grid-template-columns: 1fr; }
+        .footer-bottom { flex-direction: column; text-align: center; }
+        .footer-legal { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+        .footer-legal a { margin-right: 0; }
+        .team-cta { padding: 28px 20px; }
+        .team-cta p { font-size: 1.1rem; }
+    }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo-container">
+                <img src="logo.png" alt="Bénin Boost Logo">
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="formations.html" onclick="closeMenu()">Formations</a></li>
+                <li><a href="partenaire.html" onclick="closeMenu()">Partenaires</a></li>
+                <li><a href="rejoindre.html" class="nav-cta" onclick="closeMenu()">Rejoindre</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-label" data-aos="fade-down">Agence Digitale · Bénin</div>
+                <h1 data-aos="zoom-out" data-aos-delay="100">
+                    Transforme ton avenir<br>avec le <em>Digital</em>
+                </h1>
+                <p data-aos="fade-up" data-aos-delay="200">
+                    Formations d'élite, communication stratégique et opportunités concrètes pour la jeunesse du Bénin.
+                </p>
+                <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+                    <a href="formations.html" class="btn btn-primary">
+                        <i class="fas fa-graduation-cap"></i> Nos formations
+                    </a>
+                    <a href="https://wa.me/2290192743308" class="btn btn-outline">
+                        <i class="fab fa-whatsapp"></i> Nous contacter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== À PROPOS ===== -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                
+                <div class="about-visual" data-aos="fade-right">
+                    <div class="about-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Équipe Bénin Boost">
+                        <div class="floating-badge" data-aos="zoom-in" data-aos-delay="400">
+                            <i class="fas fa-rocket"></i>
+                            <span>L'avenir est digital</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-text" data-aos="fade-left">
+                    <span class="sub-tag">Notre Histoire</span>
+                    <h2 class="section-title">Qui sommes-nous ?</h2>
+                    <p class="about-desc">
+                        <strong>Bénin Boost Digital Service</strong> est bien plus qu'une agence ; c'est un réseau dynamique d'étudiants passionnés, unis par une vision commune :
+                        <em>propulser l'écosystème numérique béninois vers de nouveaux sommets.</em>
+                    </p>
+                    <p class="about-desc">
+                        Nous accompagnons les entreprises et la jeunesse dans leur transformation numérique en combinant <strong>créativité, stratégie et innovation</strong>. Notre mission est de former une génération d'experts tout en offrant des services digitaux de haut niveau.
+                    </p>
+
+                    <div class="values-grid">
+                        <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>Professionnalisme</h4>
+                        </div>
+                        <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Innovation</h4>
+                        </div>
+                        <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                            <i class="fas fa-users"></i>
+                            <h4>Esprit d'équipe</h4>
+                        </div>
+                        <div class="value-card" data-aos="fade-up" data-aos-delay="400">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Impact</h4>
+                        </div>
+                    </div>
+
+                    <div class="mini-stats">
+                        <div class="stat-box">
+                            <span class="stat-number">+200</span>
+                            <span class="stat-label">Étudiants impactés</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">+20</span>
+                            <span class="stat-label">Projets réalisés</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">+10</span>
+                            <span class="stat-label">Partenaires</span>
+                        </div>
+                    </div>
+
+                    <a href="#services" class="btn btn-primary">Découvrir nos services <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header-centered" data-aos="fade-down">
+                <div class="section-badge">Expertise Digitale</div>
+                <h2 class="section-title">Nos <span>Services</span></h2>
+                <p class="section-desc">Des solutions digitales complètes pour booster votre visibilité</p>
+            </div>
+
+            <div class="services-grid">
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Design Graphique</h3>
+                    <p>Affiches publicitaires, flyers percutants et identité visuelle complète pour votre marque.</p>
+                    <a href="https://wa.me/2290192743308?text=Bonjour%20Bénin%20Boost,%20je%20souhaite%20plus%20d'infos%20sur%20le%20Design%20Graphique." class="service-btn">Demander ce service</a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-icon"><i class="fas fa-users-cog"></i></div>
+                    <h3>Community Management</h3>
+                    <p>Gestion de vos pages Facebook/Instagram, planification et animation de communauté.</p>
+                    <a href="https://wa.me/2290192743308?text=Bonjour%20Bénin%20Boost,%20je%20suis%20intéressé%20par%20la%20gestion%20de%20mes%20réseaux%20sociaux." class="service-btn">Demander ce service</a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon"><i class="fas fa-video"></i></div>
+                    <h3>Création & Montage Vidéo</h3>
+                    <p>Vidéos promotionnelles, After movies et contenus courts (Reels/TikTok) dynamiques.</p>
+                    <a href="https://wa.me/2290192743308?text=Bonjour%20Bénin%20Boost,%20je%20souhaite%20réaliser%20un%20montage%20vidéo%20professionnel." class="service-btn">Demander ce service</a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="service-icon"><i class="fas fa-ad"></i></div>
+                    <h3>Publicité Facebook Ads</h3>
+                    <p>Campagnes publicitaires avec ciblage précis pour maximiser votre retour sur investissement.</p>
+                    <a href="https://wa.me/2290192743308?text=Bonjour%20Bénin%20Boost,%20je%20veux%20lancer%20une%20campagne%20publicitaire%20efficace." class="service-btn">Demander ce service</a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Création de Sites Web</h3>
+                    <p>Sites vitrines, landing pages et plateformes modernes, rapides et 100% responsives.</p>
+                    <a href="https://wa.me/2290192743308?text=Bonjour%20Bénin%20Boost,%20je%20souhaite%20créer%20un%20site%20web%20professionnel." class="service-btn">Demander ce service</a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+                    <h3>Com' Événementielle</h3>
+                    <p>Promotion, couverture live et production de contenus exclusifs pour vos événements.</p>
+                    <a href="https://wa.me/2290192743308?text=Bonjour%20Bénin%20Boost,%20j'ai%20besoin%20d'un%20accompagnement%20pour%20mon%20événement." class="service-btn">Demander ce service</a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Formations Digitales</h3>
+                    <p>Apprenez Canva, le Marketing Digital et le Montage Vidéo avec nos experts.</p>
+                    <a href="https://wa.me/2290192743308?text=Bonjour%20Bénin%20Boost,%20je%20souhaite%20m'inscrire%20à%20l'une%20de%20vos%20formations." class="service-btn">Demander ce service</a>
+                </div>
+
+            </div>
+
+            <div class="final-cta" data-aos="zoom-in">
+                <h3>Un projet ? Une idée ? Parlons-en maintenant.</h3>
+                <a href="https://wa.me/2290192743308" class="main-whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Nous contacter sur WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ÉQUIPE ===== -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <div class="section-header-centered" data-aos="fade-down">
+                <span class="sub-tag" style="display:block; margin-bottom:8px;">Le cœur du réseau</span>
+                <h2 class="section-title">Notre <span>Équipe</span></h2>
+                <p class="section-desc" style="margin:0 auto;">Une équipe jeune, dynamique et passionnée par le digital</p>
+            </div>
+
+            <div class="team-grid">
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="member-img-container">
+                        <img src="Marius.jpg" alt="Marius Gbadenon" class="member-img">
+                        <div class="social-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Marius Gbadenon</h3>
+                        <span class="role">Coordonnateur du réseau</span>
+                        <p>Coordonne les activités du réseau et veille à la bonne organisation des projets.</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="member-img-container">
+                        <img src="Sidoine.jpg" alt="Sidoine Ahizigbe" class="member-img">
+                        <div class="social-overlay">
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/share/1TkNXM5KWp/"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://wa.me/2290195498359"><i class="fab fa-whatsapp"></i></a>
+                                <a href="https://www.linkedin.com/in/sidoine-ahizigbe-34846a335"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/sidoineahizigbe2025"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Sidoine Ahizigbe</h3>
+                        <span class="role">Stratège Marketing</span>
+                        <p>Passionné par l'innovation numérique, l'IA et la croissance sur les réseaux Sociaux.</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member-img-container">
+                        <img src="MARIUS_DJOHON.jpg" alt="Marius Djohon" class="member-img">
+                        <div class="social-overlay">
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/curinos.dzp"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://wa.me/2290168870837"><i class="fab fa-whatsapp"></i></a>
+                                <a href="https://www.linkedin.com/in/marius-djohon-b14079307"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/marius_feliz"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Marius Djohon</h3>
+                        <span class="role">Responsable Communication</span>
+                        <p>Gestionnaire des réseaux sociaux et Community Manager.</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="member-img-container">
+                        <img src="Alan.jpg" alt="OROU N'GOBI Alan" class="member-img">
+                        <div class="social-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>OROU N'GOBI Alan</h3>
+                        <span class="role">Développeur Web et Mobile</span>
+                        <p>Passionné par le développement d'applications web et mobiles performantes et innovantes.</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="member-img-container">
+                        <img src="Lauriane .jpg" alt="Lauriane Kouye" class="member-img">
+                        <div class="social-overlay">
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/lauriane.kouye"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://wa.me/2290143741851"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Lauriane Kouye</h3>
+                        <span class="role">Graphiste</span>
+                        <p>Donne vie à vos idées avec des visuels modernes et percutants.</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="member-img-container">
+                        <img src="Chadrac.jpg" alt="Chadrac Ahossouhe" class="member-img">
+                        <div class="social-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://wa.me/2290191532728"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Chadrac Ahossouhe</h3>
+                        <span class="role">Monteur Vidéo</span>
+                        <p>Spécialiste en montage vidéo.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="team-cta" data-aos="zoom-in">
+                <p>Envie de collaborer avec notre équipe ?</p>
+                <a href="https://wa.me/2290192743308" class="btn btn-primary">
+                    Nous contacter <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header-centered" data-aos="fade-down">
+                <div class="section-badge">Discutons ensemble</div>
+                <h2 class="section-title">Contactez-<span>nous</span></h2>
+                <p class="section-desc">Une question ? Un projet ? Notre équipe est disponible pour vous répondre rapidement</p>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="info-card">
+                        <div class="info-item">
+                            <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+                            <div>
+                                <h4>Téléphone / WhatsApp</h4>
+                                <p>+229 01 92 74 33 08</p>
+                                <a href="https://wa.me/2290192743308" class="link-action">Écrire sur WhatsApp →</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email Professionnel</h4>
+                                <p>beninboostdigitalservice@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4>Localisation</h4>
+                                <p>Abomey, Bénin</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-container">
+                        <h4>Suivez notre actualité</h4>
+                        <div class="social-icons">
+                            <a href="https://web.facebook.com/profile.php?id=61577301784676" class="s-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="s-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="s-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.tiktok.com/@bnin.boost.digita?lang=fr" class="s-icon"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="map-placeholder">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15828.604603612574!2d1.9818!3d7.1856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x102fe9477b7e5e3f%3A0x7d6c5d6e!2sAbomey%2C%20B%C3%A9nin!5e0!3m2!1sfr!2sbj!4v1713360000000!5m2!1sfr!2sbj"
+                            allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="contact-form-container" data-aos="fade-left">
+                    <form id="benin-boost-form" action="https://formspree.io/f/xqewepol" method="POST" class="contact-form">
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Nom</label>
+                                <input type="text" name="nom" placeholder="Ex: Ahizigbe" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Prénom</label>
+                                <input type="text" name="prenom" placeholder="Ex: Sidoine" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Numéro WhatsApp</label>
+                            <input type="tel" name="whatsapp" placeholder="+229 XX XX XX XX" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" placeholder="votre@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Sujet</label>
+                            <select name="service" required>
+                                <option value="">Choisissez un service</option>
+                                <option value="Design Graphique">Design Graphique</option>
+                                <option value="Community Management">Community Management</option>
+                                <option value="Création de Site Web">Création de Site Web</option>
+                                <option value="Publicité Ads">Publicité Ads</option>
+                                <option value="Formation">Formation</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea name="message" rows="4" placeholder="Décrivez votre projet ici..." required></textarea>
+                        </div>
+
+                        <button type="submit" id="submit-btn" class="btn-submit">
+                            Envoyer le message <i class="fas fa-paper-plane"></i>
+                        </button>
+
+                        <div id="form-status" style="display:none; margin-top:20px; padding:15px; border-radius:12px; text-align:center; font-weight:bold;"></div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="main-footer">
+        <div class="container">
+
+            <div class="footer-newsletter" data-aos="fade-up">
+                <div class="newsletter-content">
+                    <h3>Restez connecté au digital</h3>
+                    <p>Recevez nos conseils et opportunités directement dans votre boîte mail.</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn-newsletter">S'abonner</button>
+                </form>
+            </div>
+
+            <div class="footer-grid">
+                <div class="footer-col about-col">
+                    <a href="#" class="footer-logo">BÉNIN BOOST<span>.</span></a>
+                    <p class="footer-text">
+                        Réseau d'étudiants spécialisé en communication digitale, formation et accompagnement des entreprises au Bénin. L'excellence à la portée de tous.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://web.facebook.com/profile.php?id=61577301784676" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/2290192743308" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.tiktok.com/@bnin.boost.digita?lang=fr" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#formations">Formations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Nos Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Design Graphique</a></li>
+                        <li><a href="#services">Community Management</a></li>
+                        <li><a href="#services">Facebook Ads</a></li>
+                        <li><a href="#services">Sites Web</a></li>
+                        <li><a href="#services">Montage Vidéo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col contact-col">
+                    <h4>Contactez-nous</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Abomey, Bénin</li>
+                        <li><i class="fas fa-phone-alt"></i> +229 01 92 74 33 08</li>
+                        <li><i class="fas fa-envelope"></i> beninboostdigitalservice@gmail.com</li>
+                    </ul>
+                    <a href="#contact" class="btn-footer-contact">Nous contacter <i class="fas fa-paper-plane"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">CGU</a>
+                </div>
+                <p class="copyright">© 2026 <span>Bénin Boost Digital Service</span> – Tous droits réservés.</p>
+            </div>
+        </div>
+
+        <a href="#" class="scroll-top" id="scrollTop">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 750, once: true, easing: 'ease-out-cubic' });
+
+        // ---- Menu Mobile ----
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+
+        function openMenu() {
+            navLinks.classList.add('active');
+            navOverlay.classList.add('active');
+            menuToggle.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            navLinks.classList.remove('active');
+            navOverlay.classList.remove('active');
+            menuToggle.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.contains('active') ? closeMenu() : openMenu();
+        });
+
+        navOverlay.addEventListener('click', closeMenu);
+
+        // ---- Navbar Scroll ----
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ---- Scroll Top ----
+        document.getElementById('scrollTop').addEventListener('click', e => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ---- Formulaire Contact ----
+        const form = document.getElementById("benin-boost-form");
+        const status = document.getElementById("form-status");
+        const btn = document.getElementById("submit-btn");
+
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault();
+            btn.disabled = true;
+            btn.innerHTML = "Envoi en cours… <i class='fas fa-spinner fa-spin'></i>";
+
+            fetch(event.target.action, {
+                method: form.method,
+                body: new FormData(event.target),
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    status.innerHTML = "✅ Merci ! Votre message a été envoyé avec succès. L'équipe vous recontactera bientôt.";
+                    status.style.display = "block";
+                    status.style.background = "rgba(0,99,99,0.08)";
+                    status.style.color = "#006363";
+                    status.style.border = "1px solid rgba(0,99,99,0.2)";
+                    form.reset();
+                    btn.style.display = "none";
+                } else {
+                    response.json().then(data => {
+                        status.innerHTML = data.errors ? data.errors.map(e => e.message).join(", ") : "❌ Une erreur est survenue.";
+                        status.style.display = "block";
+                        status.style.color = "red";
+                        btn.disabled = false;
+                        btn.innerHTML = "Réessayer <i class='fas fa-paper-plane'></i>";
+                    });
+                }
+            }).catch(() => {
+                status.innerHTML = "❌ Erreur de connexion. Vérifiez votre internet.";
+                status.style.display = "block";
+                status.style.color = "red";
+                btn.disabled = false;
+                btn.innerHTML = "Réessayer <i class='fas fa-paper-plane'></i>";
+            });
+        });
+    </script>
+</body>
+</html>
